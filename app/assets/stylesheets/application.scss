@@ -15,3 +15,16 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// 全体のレイアウト
+*{
+	margin:0;
+	padding:0;
+}
+
+// グレー枠見出し
+.head-text{
+	background-color: #fffafa;
+	padding: 5px 10px;
+	margin-left: 50px;
+}
