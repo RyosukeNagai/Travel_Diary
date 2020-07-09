@@ -1,52 +1,81 @@
 <div class="container">
-  <h3 style="margin-bottom: 30px;margin-top: 100px;">
-    <span class="head-text">新規登録</span>
-  </h3>
   <div class="row">
-    <div class="col-lg-12">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-   <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <div class="col-xs-4 col-xs-offset-4">
+      <h2 class="head-title">〜 新規会員登録 〜</h2>
     </div>
+  </div>
+    <p class="head-text">下記のフォームに入力お願いします。</p>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  <div class="row" style="margin-bottom: 15px;">
-    <div class="col-lg-2">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <%= render "devise/shared/error_messages", resource: resource %>
+    </div>
+    <div class="col-xs-1">
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-4">
+      <%= f.label :name %>
+    </div>
+    <div class="col-xs-6">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name",style:"width:40%"%>
+    </div>
+  </div>
+    <br>
+     
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-4">
       <%= f.label :email %>
     </div>
-    <div class="col-lg-5">
-      <%= f.email_field :email,autofocus: true, autocomplete: "email" %>
+    <div class="col-xs-6">
+      <%= f.email_field :email,autofocus: true, autocomplete: "email",style:"width:60%"%>
     </div>
   </div>
+    <br>
 
-
-  <div class="row" style="margin-bottom: 15px;">
-    <div class="col-lg-2">
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-4">
       <%= f.label :password %>
     </div>
-    <div class="col-lg-6">
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="col-xs-6">
+      <%= f.password_field :password, autocomplete: "new-password",style:"width:40%"%><br>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+      <% end %>
     </div>
   </div>
+    <br>
 
-  <div class="row" style="margin-bottom: 30px;">
-    <div class="col-lg-2">
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-4">
       <%= f.label :password_confirmation %>
     </div>
-    <div class="col-lg-6">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="col-xs-6">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",style:"width:40%" %>
     </div>
   </div>
+    <br>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録" ,class:"btn btn-success btn-lg",
+          style:"padding:5px 30px;margin-bottom:30px " %>
   </div>
 <% end %>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-4">
+      <h4><span class="head-text2">既に登録済みの方</span></h4>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-5">
+        <p style="padding-left: 20px">
+          <a href="/users/sign_in", style="color: blue; border-bottom: 1px solid blue">
+          こちら</a>
+          からログインしてください。
+        </p>
+      </div>
+    </div>
 </div>
 
-<%= render "devise/shared/links" %>
