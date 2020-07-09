@@ -10,6 +10,34 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top ">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-1left">
+          <p>TravelDiary</p>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+
+            <% if user_signed_in? %>
+              <li>ようこそ、<%= current_user.name %>さん！</li>
+              <li><%= link_to ' 投稿一覧', travels_path, class:"glyphicon glyphicon-book" %></li>
+              <li><%= link_to ' 新規投稿', new_travel_path, class:"glyphicon glyphicon-log-out" %></li>
+              <li><%= '検索' %><li>
+                <li><%= link_to ' ログアウト', destroy_user_session_path,method: :delete, class:"glyphicon glyphicon-log-out" %></li>
+            <% else %>
+              <li><%= link_to ' Home', root_path, class:"glyphicon glyphicon-home" %></li>
+              <li><%= link_to ' About', home_about_path, class:"glyphicon glyphicon-link" %></li>
+              <li><%= link_to ' sign Up', new_user_registration_path, class:"glyphicon glyphicon-user" %></li>
+              <li><%= link_to ' login', new_user_session_path, class:"glyphicon glyphicon-log-in" %></li>
+            </ul>
+        </nav>
+      </div>
+      <% end %>
+    </header>
+    <br>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+    </div>
     <%= yield %>
   </body>
 </html>
