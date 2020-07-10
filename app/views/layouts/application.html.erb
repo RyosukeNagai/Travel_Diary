@@ -1,6 +1,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
     <title>TravelDiary</title>
@@ -11,42 +12,68 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="wrapper">
-    <header class="navbar navbar-light">
+  <body style="background-color:#E6FFE9;">
+    <header class="navbar navbar-light" style="background-color:#E6FFE9;">
       <div class="container">
+        <div class="row">
+          <div class="col-xs-5 col-xs-offset-4">
           <h1 class="title">~ Travel Diary ~</h1>
-          <p class="sub-title">〜さぁ旅に出かけよう！！〜</p>
+        </div>
+      </div>
+    </div>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-
             <% if user_signed_in? %>
-              <li class="nav-item-name">ようこそ、<%= current_user.name %>さん！</li>
-              <li class="nav-item"><%= link_to ' マイページ', user_path(current_user), class:"fas fa-child my-red" %></li>
-              <li class="nav-item"><%= link_to ' 新規投稿', new_travel_path, class:"fas fa-pencil-alt my-red" %></li>
-              <li class="nav-item"><%= link_to ' 投稿一覧', travels_path, class:"fas fa-users my-red" %></li>
-                <li class="nav-item"><%= link_to ' ログアウト', destroy_user_session_path,method: :delete, class:"fas fa-sign-out-alt my-red" %></li>
-                <li class="nav-item"><%= '検索' %><li>
+            <ul class="nav navbar-nav navbar-right">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-5 col-xs-offset-3">
+              <li class="nav-item-name">WellcoM!! <%= current_user.name %> ♪</li>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+              <div class="col-xs-2">
+              <li class="nav-item"><%= link_to ' マイページ', user_path(current_user), class:"fas fa-child faa-float animated my-red" %></li>
+            </div>
+            <div class="col-xs-2">
+              <li class="nav-item"><%= link_to ' 新規投稿', new_travel_path, class:"fas fa-pencil-alt faa-float animated my-red" %></li>
+            </div>
+            <div class="col-xs-2">
+              <li class="nav-item"><%= link_to ' 投稿一覧', travels_path, class:"fas fa-users faa-float animated my-red" %></li>
+            </div>
+            <div class="col-xs-2">
+                <li class="nav-item"><%= link_to ' ログアウト', destroy_user_session_path,method: :delete, class:"fas fa-sign-out-alt faa-float animated my-red" %></li>
+                </div>
+                <li class="nav-item" style="color:#EC8B5E;"><%= '検索' %><li>
+              </ul>
+            </li>
 
             <% else %>
+            <ul class="nav navbar-nav navbar-right">
+            <div class="container">
+            <div class="row">
+              <div class="col-xs-3">
               <li class="nav-item"><%= link_to 'Home', root_path,class:"fas fa-home faa-pulse animated my-red" %></li>
-              <li class="nav-item"><%= link_to ' About', home_about_path, class:"fas fa-briefcase faa-tada animated my-red" %></li>
-              <li class="nav-item"><%= link_to ' sign Up', new_user_registration_path, class:"fas fa-user faa-flash animated my-red" %></li>
+            </div>
+              <div class="col-xs-3">
+              <li class="nav-item"><%= link_to ' About', home_about_path, class:"fas fa-briefcase faa-pulse animated my-red" %></li>
+            </div>
+              <div class="col-xs-3">
+              <li class="nav-item"><%= link_to ' sign Up', new_user_registration_path, class:"fas fa-user faa-pulse animated my-red" %></li>
+            </div>
+              <div class="col-xs-3">
               <li class="nav-item"><%= link_to ' login', new_user_session_path, class:"fas fa-bicycle faa-passing animated my-red" %></li>
-            </ul>
-        </nav>
-      </div>
+            </div>
+            </div>
+          </div>
+        </ul>
       <% end %>
-    </header>
-    <br>
-    <div class="container">
-      <p id="notice"><%= notice %></p>
+      </nav>
     </div>
+    </header>
     <%= yield %>
-    <footer>
-      <div class="container">
-        <div class="footer-logo"></div>
-      </div>
-    </footer>
+    </div>
+    <footer></footer>
   </body>
 </html>
