@@ -1,2 +1,48 @@
-<h1>Travels#index</h1>
-<p>Find me in app/views/travels/index.html.erb</p>
+<div class="container">
+	<div class="row">
+			<div class="users" style="margin-top: 15px">
+				<% @travels.each do |travel| %>
+				<%= attachment_image_tag travel,:travel_image,format:"jpg",
+                  fallback:"top_page.jpg", class:"travel-image",style:"margin-left:18%;"%>
+
+          <div class="col-xs-10 col-xs-offset-1">
+   
+   <div class="user-image">
+    <div class="col-xs-2"> 
+     <%= attachment_image_tag travel.user,:user_image,:fill, 80, 80, fallback: "no_image.jpg",class: "img-responsive img-circle" %>
+    </div>
+   </div>
+
+   <div class="user-table">
+    <div class="col-xs-2">
+     <p>ニックネーム</p>
+    </div>
+    <div class="hoge">
+     <div class="col-xs-7">
+      <p><%= travel.user.name %></p>
+     </div>
+    </div>
+   </div>
+
+   <div class="user-table2">
+    <div class="col-xs-2">
+     <p>タイトル</p>
+    </div>
+    <div class="col-xs-7">
+     <%= travel.title %>
+    </div>
+   </div>
+
+	<div class="user-table2">
+      <div class="col-xs-2">
+      		<p>ないよう</p>
+      	</div>
+      	<div class="col-xs-7">
+              <%= travel.body %>
+          </div>
+      </div>
+  </div>
+      <% end %>
+  </div>
+</div>
+</div>

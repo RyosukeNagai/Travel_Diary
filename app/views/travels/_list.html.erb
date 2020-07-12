@@ -1,0 +1,16 @@
+<div class="each">
+ <div class="row">
+
+  <% travels.each do |travel| %>
+   <%= link_to (travel) do %>
+     
+    <div class="col-xs-4">
+     <div class="each-image">
+      <%= attachment_image_tag travel, :travel_image, :fill, 350, 300, fallback: "travel-no-image.jpg" %>
+      <% end %><br>
+      <%= travel.title %>
+     </div> 
+    </div>
+  <% end %>
+ </div>
+</div>
