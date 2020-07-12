@@ -1,2 +1,63 @@
-<h1>Travels#edit</h1>
-<p>Find me in app/views/travels/edit.html.erb</p>
+<div class="container">
+ <div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+   <h2 class="head-title5">〜 編集ページ 〜</h2>
+  </div>
+ </div>
+
+ <%= form_for(@travel) do |f| %>
+
+  <% if @travel.errors.any? %>
+      <h3><%= @travel.errors.count %>eroor</h3>
+        <ul>
+          <% @travel.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+    <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+        <p class="travel-form">Title</p>
+     </div>
+     <div class="col-xs-6">
+              <%= f.text_field :title %>
+          </div>
+    </div>
+    <br>
+    
+    <div class="row">
+     <div class="col-xs-1 col-xs-offset-5">
+      <p class="travel-form">本文</p>
+     </div>
+     <div class="col-xs-6">
+      <%= f.text_area :body ,style:"width:40%;"%>
+     </div>
+    </div>
+    <br>
+
+    <div class="row">
+     <div class="col-xs-2 col-xs-offset-4">
+      <p class="travel-form">旅行先の住所</p>
+     </div>
+     <div class="col-xs-6">
+      <%= f.text_field :addres ,style:"width:40%;"%>
+     </div>
+    </div>
+    <br>
+
+    <div class="row">
+     <div class="col-xs-1 col-xs-offset-5">
+    <%= f.attachment_field :travel_image %>
+     </div>
+    </div>
+    <br>
+
+    <div class="row">
+     <div class="col-xs-2 col-xs-offset-5">
+    <%= f.submit "Update", class:"btn btn-success",style:"margin-left:40px;padding:10px 50px;"%>
+  </div>
+ </div>
+
+      <% end %>
+</div>

@@ -17,7 +17,13 @@ class TravelsController < ApplicationController
   def update
   end
 
+
   def destroy
   end
 
+private
+
+  def travel_params
+    params.require(:travel).permit(:title, :body, :address, :travel_image)
+  end
 end

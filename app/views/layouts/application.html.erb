@@ -2,6 +2,7 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
     <title>TravelDiary</title>
@@ -37,10 +38,10 @@
               <li class="nav-item"><%= link_to ' マイページ', user_path(current_user), class:"fas fa-child faa-float animated my-red" %></li>
             </div>
             <div class="col-xs-2">
-              <li class="nav-item"><%= link_to ' 新規投稿', new_travel_path, class:"fas fa-pencil-alt faa-float animated my-red" %></li>
+              <li class="nav-item"><%= link_to ' 投稿一覧', travels_path, class:"fas fa-users faa-float animated my-red" %></li>
             </div>
             <div class="col-xs-2">
-              <li class="nav-item"><%= link_to ' 投稿一覧', travels_path, class:"fas fa-users faa-float animated my-red" %></li>
+              <li class="nav-item"><%= link_to ' しおり', shioris_path, class:"fas fa-pencil-alt faa-float animated my-red" %></li>
             </div>
             <div class="col-xs-2">
                 <li class="nav-item"><%= link_to ' ログアウト', destroy_user_session_path,method: :delete, class:"fas fa-sign-out-alt faa-float animated my-red" %></li>
