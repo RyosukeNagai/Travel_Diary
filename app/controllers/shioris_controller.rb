@@ -1,23 +1,23 @@
 class ShiorisController < ApplicationController
   def index
-    @travels = Travel.all
+    @shioris = Shiori.all
   end
 
   def show
-    @travel = Travel.find(params[:id])
-    @user = User.find(@travel.user_id)
+    @shiori = Shiori.find(params[:id])
+    @user = User.find(@shiori.user_id)
   end
 
   def new
-    @travel = Travel.new
+    @shiori = Shiori.new
   end
 
   def create
-      @travel = Travel.new(travel_params)
-      @travel.user_id = current_user.id
+      @shiori = Shiori.new(shiori_params)
+      @shiori.user_id = current_user.id
     if
-      @travel.save
-      redirect_to user_path(current_user)
+      @shiori.save
+      redirect_to shioris_path(current_user)
     else
       render "new"
     end
@@ -30,7 +30,7 @@ class ShiorisController < ApplicationController
 
   def update
       @shiori = Shiori.find(params[:id])
-    if @shiori.update(travel_params)
+    if @shiori.update(shiori_params)
         redirect_to @shiori
     else #if文でエラー発生時と正常時のリンク先を枝分かれにしている。
         render "edit"
@@ -41,12 +41,12 @@ class ShiorisController < ApplicationController
   def destroy
       @shiori = Shiori.find(params[:id])
       @shiori.destroy
-      redirect_to user_path(@shiori.user)
+      redirect_to shioris_path
   end
 
 private
 
-  def travel_params
-    params.require(:shiori).permit(:title, :body)
+  def shiori_params
+    params.require(:shiori).permit(:title, :body, :shiori_image,)
   end
 end

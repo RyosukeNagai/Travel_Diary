@@ -1,2 +1,17 @@
-<h1>Souvenirs#new</h1>
-<p>Find me in app/views/souvenirs/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-4 col-xs-offset-4">
+			<h2 class="head-title7"><b>〜 お土産リストを作ろう♪ 〜<b></h2>
+		</div>
+	</div>
+	<%= form_for(@souvenir,url:shiori_souvenirs_path) do |f| %>
+		<% if @souvenir.errors.any? %>
+      <h3><%= @souvenir.errors.count %>eroor</h3>
+        <ul>
+          <% @souvenir.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% end %>
+  </div>

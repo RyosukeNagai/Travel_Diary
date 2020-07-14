@@ -1,2 +1,53 @@
-<h1>Shioris#new</h1>
-<p>Find me in app/views/shioris/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-5 col-xs-offset-4">
+			<h2 class="head-title4">〜 しおりを作成しよう♪ 〜</h2>
+		</div>
+	</div>
+	<%= form_for(@shiori, url:shioris_path) do |f| %>
+		<% if @shiori.errors.any? %>
+      <h3><%= @shiori.errors.count %>eroor</h3>
+        <ul>
+          <% @shiori.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+    <div class="row">
+  		<div class="col-xs-2 col-xs-offset-4">
+        <p class="travel-form" style="margin-left:33%;">しおりタイトル</p>
+    	</div>
+    	<div class="col-xs-6">
+              <%= f.text_field :title %>
+          </div>
+    </div>
+    <br>
+    
+    <div class="row">
+    	<div class="col-xs-1 col-xs-offset-5">
+    		<p class="travel-form">メモ</p>
+    	</div>
+    	<div class="col-xs-6">
+    		<%= f.text_area :body ,style:"width:40%;"%>
+    	</div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-1 col-xs-offset-5">
+        <p class="travel-form">image</p>
+      </div>
+      <div class="col-xs-6">
+    <%= f.attachment_field :shiori_image %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-5">
+    <%= f.submit "作成する", class:"btn btn-primary active",style:"margin-left:40px;padding:10px 50px;"%>
+    </div>
+  </div>
+
+      <% end %>
+</div>

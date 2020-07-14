@@ -4,7 +4,7 @@
 
 // トップ画面
 .main-visual {
- 	background-image: url(travel.jpg);
+ 	background-image: image-url("travel.jpg");
 	background-size: cover;
 	background-position: center;
 	width: 90%;
@@ -46,15 +46,15 @@
   background-color: white;
 }
 .box1{
-	background-image: url(kyoto.jpg);
+	background-image: image-url("kyoto.jpg");
 	background-size: cover;
 }
 .box2{
-	background-image: url(hawai2.jpg);
+	background-image: image-url("hawai2.jpg");
 	background-size: cover;
 }
 .box3{
-	background-image: url(hawai.jpg);
+	background-image: image-url("hawai.jpg");
 	background-size: cover;
 }
 //aboutページ

@@ -1,7 +1,6 @@
 <div class="container">
  <div class="row">
   <div class="col-xs-10 col-xs-offset-1">
-   
    <div class="user-image">
     <div class="col-xs-2"> 
      <%= attachment_image_tag user, :user_image, :fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circle" %>
@@ -9,7 +8,7 @@
    </div>
    <div class="user-name">
     <div class="col-xs-3">
-     <p>ニックネーム</p>
+     <b>ニックネーム</b>
     </div>
     <div class="user-name-nick">
      <div class="col-xs-7"> 
@@ -19,10 +18,10 @@
    </div>
    <div class="introduce">
     <div class="col-xs-3">
-     <p>自己紹介</p>
+     <b>自己紹介</b>
     </div>
     <div class="col-xs-7">
-     <p><%= user.introduce %></p>
+     <b><%= user.introduce %></b>
     </div>
    </div>
   </div>  

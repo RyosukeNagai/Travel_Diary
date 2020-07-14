@@ -24,16 +24,16 @@
      <p>タイトル</p>
     </div>
     <div class="col-xs-7">
-     <%= @travel.title %>
+     <b><%= @travel.title %><b>
     </div>
    </div>
 
    <div class="user-table2">
    <div class="col-xs-3">
-    <p>旅行先住所</p>
+    <b>旅行先住所</b>
   </div>
     <div class="col-xs-3">
-    <%= @travel.addres %>
+    <b><%= @travel.address %><b>
   </div>
 </div>
   </div>  
@@ -42,7 +42,7 @@
 <div class="row" style="margin-right: 250px;">
 <div class="show-image">
           <%= attachment_image_tag @travel,:travel_image,format:"jpg",
-                  fallback:"top_page.jpg", class:"travel-image" %>
+                  fallback:"travel-no-image.jpg", class:"travel-image" %>
         </div>
       </div>
 

@@ -73,8 +73,19 @@
       </nav>
     </div>
     </header>
-    <%= yield %>
+    <div class="wrapper">
+      <%= yield %>
     </div>
-    <footer></footer>
+    <footer>
+      <% if user_signed_in? %>
+        <div class="footer1">
+          
+        </div>
+      <% else %>
+        <div class="footer2">
+          
+        </div>
+      <% end %>
+    </footer>
   </body>
 </html>

@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_103736) do
   end
 
   create_table "preparations", force: :cascade do |t|
-    t.integer "travel_id"
+    t.integer "shiori_id"
     t.integer "genre_id"
     t.string "name"
     t.boolean "is_active"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_103736) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer "travel_id"
+    t.integer "shiori_id"
     t.integer "year"
     t.integer "month"
     t.integer "day"
@@ -57,12 +57,13 @@ ActiveRecord::Schema.define(version: 2020_07_12_103736) do
     t.integer "user_id"
     t.string "title"
     t.text "body"
+    t.string "shiori_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "souvenirs", force: :cascade do |t|
-    t.integer "travel_id"
+    t.integer "shiori_id"
     t.string "name"
     t.integer "count"
     t.integer "price"

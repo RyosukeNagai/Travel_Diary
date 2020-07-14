@@ -72,6 +72,19 @@
 	font-size:14px;
 	font-family: "Nico Moji";
 }
+.new-button{
+ position: fixed;
+  top: 200px;
+  right: 150px;
+}
+.my-orange{
+ color:#5D99FF;
+ margin-left:5%;
+}
+.button-title{
+ border-bottom: 2px solid yellow;
+ font-size:20px;
+}
 //_list
 .each{
  width:100%;
@@ -82,5 +95,6 @@
  background-position:center;
  margin-bottom:25px;
 }
+
 
 

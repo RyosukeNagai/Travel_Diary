@@ -1,2 +1,67 @@
-<h1>Shioris#show</h1>
-<p>Find me in app/views/shioris/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="shiori-title">
+      <b>#<%= @shiori.title %></b>
+    </div>
+  <div class="shiori-image">
+          <%= attachment_image_tag @shiori,:shiori_image,format:"jpg",
+                  fallback:"shiori-no-image.jpg", class:"shiori-image" %>
+  </div>
+  </div>
+  <div class="row" style="margin-left: 20%;">
+    <div class="col-xs-11 col-xs-offset-1">
+      <div class="user-image">
+        <div class="col-xs-2">
+          <%= attachment_image_tag @user,:user_image,:fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circle" %>
+        </div>
+      <div class="col-xs-2">
+        <b>しおり作成者</b>
+      </div>
+      <div class="col-xs-6" style="margin-left: 7%;">
+        <b>＊<%= @user.name %></b>
+      </div>
+      </div>
+
+      <div class="user-table">
+        <div class="col-xs-3">
+          <b>しおり作成日</b>
+        </div>
+      <div class="hoge">
+        <div class="col-xs-5">
+          <p><%= @shiori.created_at.strftime('%Y/%m/%d') %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-table">
+      <div class="col-xs-3">
+        <p>✏︎メモ</p>
+      </div>
+      <div class="hoge">
+        <div class="col-xs-5">
+          <b><%= @shiori.body %></b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="col-xs-7 col-xs-offset-5">
+      <div class="user-table">
+        <div class="col-xs-2">
+          <%= link_to 'しおりを編集', edit_shiori_path(@shiori), class: "btn btn-success" %>
+        </div>
+      <div class="col-xs-1">
+        <div class="destroy">
+          <%= link_to "しおりを削除する",shiori_path(@shiori), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},
+                  class: "btn btn-danger" %>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
