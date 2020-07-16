@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, "travel_diary"
+set :application, "Travel_Diary"
 set :repo_url, "https://github.com/RyosukeNagai/Travel_Diary.git"
 set :deploy_to, "/home/ec2-user/travel_diary"
 set :rbenv_ruby, '2.5.7'
