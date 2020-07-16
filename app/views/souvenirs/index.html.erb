@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">
+			<h2 class="head-title7"><b>〜 お土産リストを作ろう♪ 〜</b></h2>
+		</div>
+	</div>
+
+	<%= form_for(@souvenir,url:shiori_souvenirs_path) do |f| %>
+		<% if @souvenir.errors.any? %>
+      <h3><%= @souvenir.errors.count %>eroor</h3>
+        <ul>
+          <% @souvenir.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <div class="row">
+  		<div class="col-xs-1 col-xs-offset-5">
+        <b class="travel-form">商品名</b>
+    	</div>
+    	<div class="col-xs-6">
+              <%= f.text_field :name %>
+          </div>
+    </div>
+    <br>
+    
+    <div class="row">
+    	<div class="col-xs-1 col-xs-offset-5">
+    		<b class="travel-form">個数</b>
+    	</div>
+    	<div class="col-xs-6">
+    		<%= f.text_area :count ,style:"width:40%;"%>
+    	</div>
+    </div>
+    <br>
+
+    <div class="row">
+    	<div class="col-xs-3 col-xs-offset-3">
+    		<b class="travel-form2">単価（税抜き）</b>
+    	</div>
+    	<div class="col-xs-6">
+    		<%= f.text_field :price ,style:"width:40%;"%>
+    	</div>
+    </div>
+    <br>
+
+      <% end %>
+  </div>
+

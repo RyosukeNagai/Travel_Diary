@@ -1,14 +1,12 @@
 class SouvenirsController < ApplicationController
-  def new
-  	@souvenir = Souvenir.new
-  end
 
   def create
   	@souvenir = Souvenir.new(souvenir_params)
-
   end
 
-  def show
+  def index
+    @souvenir = Souvenir.new
+    @souvenirs = Souvenir.all
   end
 
   def destroy

@@ -3,10 +3,26 @@
     <div class="shiori-title">
       <b>#<%= @shiori.title %></b>
     </div>
+    <div class="col-xs-9">
   <div class="shiori-image">
           <%= attachment_image_tag @shiori,:shiori_image,format:"jpg",
                   fallback:"shiori-no-image.jpg", class:"shiori-image" %>
   </div>
+</div>
+  <div class="col-xs-3">
+  <div class="side-bar"><b>★旅行の準備をしよう!!</b></div>
+  <div class="btn-group">
+  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    リスト一覧
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li role="presentation"><%= link_to 'お土産ページ',shiori_souvenirs_path(@shiori)%></li>
+    <li role="presentation"><%= link_to '準備ページ',shiori_preparations_path(@shiori)%></li>
+    <li role="presentation"><%= link_to 'スケジュールページ',shiori_schedules_path(@shiori)%></li>
+  </ul>
+</div>
+</div>
   </div>
   <div class="row" style="margin-left: 20%;">
     <div class="col-xs-11 col-xs-offset-1">

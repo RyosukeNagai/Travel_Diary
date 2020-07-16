@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   def create
   end
 
-  def show
+  def index
   end
 
   def edit

@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   resource :favorites, only: [:create,:destroy]
 end
   resources :shioris,only: [:index,:show,:edit,:update,:new,:create,:destroy] do
-  resources :schedules, only: [:show,:new,:create,:edit,:update,:destroy]
-  resources :preparations, only: [:new,:create,:show,:destroy]
-  resources :souvenirs, only: [:new,:create,:show,:destroy]
+  resources :schedules, only: [:index,:new,:create,:edit,:update,:destroy]
+  resources :preparations, only: [:new,:create,:index,:destroy]
+  resources :souvenirs, only: [:create,:index,:destroy]
 end
   resources :comments, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

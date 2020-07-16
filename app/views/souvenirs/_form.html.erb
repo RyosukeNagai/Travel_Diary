@@ -1,0 +1,14 @@
+
+<div class="row">
+  <div class="col-xs">
+	<%= form_for(@souvenir,url:shiori_souvenirs_path) do |f| %>
+		<% if @souvenir.errors.any? %>
+      <h3><%= @souvenir.errors.count %>eroor</h3>
+        <ul>
+          <% @souvenir.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% end %>
+  </div>

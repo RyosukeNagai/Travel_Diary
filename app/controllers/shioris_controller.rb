@@ -1,11 +1,14 @@
 class ShiorisController < ApplicationController
   def index
     @shioris = Shiori.all
+    shioris = @shioris
+    @myshioris = current_user.shioris
   end
 
   def show
     @shiori = Shiori.find(params[:id])
     @user = User.find(@shiori.user_id)
+    
   end
 
   def new
@@ -47,6 +50,6 @@ class ShiorisController < ApplicationController
 private
 
   def shiori_params
-    params.require(:shiori).permit(:title, :body, :shiori_image,)
+    params.require(:shiori).permit(:title, :body, :shiori_image,:user_id)
   end
 end
