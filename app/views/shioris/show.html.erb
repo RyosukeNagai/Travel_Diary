@@ -78,6 +78,29 @@
       </div>
     </div>
   </div>
+  <table class="table table-hover">
+      <thead>
+            <tr>
+                <th>商品名</th>
+                <th>個数</th>
+                <th>価格(税抜き)</th>
+                <th></th>
+            </tr>
+      </thead>
+      <tbody>
+    <% @shiori.souvenirs.each do |souvenir| %>
+            <tr>
+                <td><%= souvenir.name %></td>
+                <td><%= souvenir.count%></td>
+                <td><%= souvenir.price %>円</td>
+                <td><%= link_to "削除する",shiori_souvenir_path(@shiori,souvenir),
+              method: :delete ,class:"btn btn-danger" %></td>
+            </tr>
+        <% end %>
+      </div>
+      </tbody>
+    </table>
 </div>
+
 
 

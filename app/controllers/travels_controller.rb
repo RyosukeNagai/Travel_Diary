@@ -1,15 +1,12 @@
 class TravelsController < ApplicationController
   def index
     @travels = Travel.all
-    @comments = Comment.all
-    @comment = Comment.new
   end
 
   def show
       @travel = Travel.find(params[:id])
       @user = User.find(@travel.user_id)
       @comments = Comment.all
-      @comment = Comment.new
   end
 
   def new

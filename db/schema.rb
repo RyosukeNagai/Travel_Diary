@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_103736) do
     t.integer "month"
     t.integer "day"
     t.text "plan"
+    t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

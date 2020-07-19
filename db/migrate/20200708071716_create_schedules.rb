@@ -6,6 +6,7 @@ class CreateSchedules < ActiveRecord::Migration[5.2]
     	t.integer :month
     	t.integer :day
     	t.text :plan
+      t.integer :time
 
       t.timestamps
     end

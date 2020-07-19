@@ -19,7 +19,7 @@
         <p class="travel-form" style="margin-left:33%;">しおりタイトル</p>
     	</div>
     	<div class="col-xs-6">
-              <%= f.text_field :title %>
+              <%= f.text_field :title,placeholder:"例：ハワイに行きまーす！",style:"width:40%;" %>
           </div>
     </div>
     <br>
@@ -29,7 +29,7 @@
     		<p class="travel-form">メモ</p>
     	</div>
     	<div class="col-xs-6">
-    		<%= f.text_area :body ,style:"width:40%;"%>
+    		<%= f.text_area :body ,style:"width:40%;",placeholder:"例： ◯月◯日出発予定〜。"%>
     	</div>
     </div>
     <br>

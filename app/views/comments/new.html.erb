@@ -1,0 +1,6 @@
+<h2>コメント入力</h2>
+<%= form_for [@travel,@comment] do |f| %>
+
+    <%= f.text_field :comment %>
+    <%= f.submit %>
+<% end %>

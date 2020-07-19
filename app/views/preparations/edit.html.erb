@@ -1,0 +1,24 @@
+
+<%= form_for [@shiori,@preparation] do |f| %>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h2 class="head-title9"><b>〜 準備物を記入しよう 〜</b></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="preparation-title2"><b>持っていく物</b></p>
+    </div>
+    <div class="col-xs-6">
+      <div class="preparation-form">
+      <%= f.text_field :name, placeholder:"例：パスポート",style:"width:30%;" %>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-5">
+      <%= f.submit "Update", class:"btn btn-success active",style:"margin-left:85px;padding:5px 40px;margin-top:20px;"%>
+    </div>
+  </div>
+  <% end %>

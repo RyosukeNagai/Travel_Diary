@@ -1,1 +1,86 @@
-<p>スケジュール</p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">
+			<h2 class="head-title7"><b>〜 ＊スケジュール一覧 〜</b></h2>
+		</div>
+	</div>
+</div>
+
+	<% @schedules.each do |schedule| %>
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+		<b><%= schedule.year %></b>
+  </div>
+    <div class="col-xs-3">
+		<b><%= schedule.month %>/<%= schedule.day %></b>
+  </div>
+  <div class="col-xs-3">
+		<b>・<%= schedule.time %>:00~</b>
+  </div>
+  <div class="col-xs-4">
+		<b><%= schedule.plan %></b>
+  </div>
+</div>
+		<% end %>
+
+
+	<%= form_for(@schedule,url:shiori_schedules_path) do |f| %>
+
+<div class="container">
+	<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h2 class="head-title8"><b>〜 スケジュール入力 〜</b></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+      <b class="travel-form4">year</b>
+    </div>
+    <div class="col-xs-6">
+      <%= f.text_field :year, placeholder:"例：20◯◯"%>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+    	<b class="travel-form4">month</b>
+    </div>
+    <div class="col-xs-6">
+    	<%= f.text_field :month, placeholder:"例：◯月"%>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+    	<b class="travel-form4">day</b>
+    </div>
+    <div class="col-xs-6">
+    	<%= f.text_field :day, placeholder:"例：◯日"%>
+    </div>
+  </div>
+    <br>
+    <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+    	<b class="travel-form4">time</b>
+    </div>
+    <div class="col-xs-6">
+    	<%= f.text_field :time, placeholder:"例：9:00~"%>
+    </div>
+  </div>
+    <br>
+    <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+    	<b class="travel-form4">plan</b>
+    </div>
+    <div class="col-xs-6">
+    	<%= f.text_area :plan, placeholder:"例：◯◯に到着" ,style:"width:40%;"%>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-5">
+      <%= f.submit "投稿する", class:"btn btn-primary active",style:"margin-left:65px;padding:10px 50px;"%>
+    </div>
+  </div>
+    <% end %>
