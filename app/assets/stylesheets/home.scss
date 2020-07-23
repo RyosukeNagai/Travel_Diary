@@ -4,22 +4,23 @@
 
 // トップ画面
 .main-visual {
- 	background-image: image-url("travel.jpg");
+ 	background-image: image-url("maldives.jpg");
 	background-size: cover;
 	background-position: center;
-	width: 90%;
-	height: 500px;
+	width: 80%;
+	height: 400px;
 	display: flex;
-	text-aligin:center;
-	margin-left:5%;
-	border: 20px solid white;
+	margin-left:10%;
+	border: 10px solid white;
+	margin-top:10px;
 }
 .main-visual-content{
 	width: 100%;
   	height: 300px;
-  	background-color: rgba( 0, 0, 0, 0.2);
+  	background-color: rgba( 0, 0, 0, 0);
   	text-align: center;
-  	padding-top: 105px;
+  	padding-top: 50px;
+  	padding-right:110px;
 }
 .main-visual-text{
 	color:white;
@@ -27,41 +28,265 @@
 	font-family: 'Permanent Marker', cursive;
 }
 .main-visual-name{
-	margin-top: 40px;
+	margin-top: 5px;
   	color: #fff;
   	font-size:30px;
   	font-family: 'Permanent Marker', cursive;
 }
-//画像を横並びに表示
-.flex {
-  width:90%;
-  display: flex;
-  background-color:#E6FFE9;
-  margin-left:5%;
+.main-name2{
+	margin-top: 40px;
+  	color: #fff;
+  	font-size:65px;
+  	font-family: "Nico Moji";
+  	padding-left:30%;
+  	padding-top: 25px;
 }
-.flex > div {
-  width: 35%;
-  height: 400px;
-  margin: 10px;
-  background-color: white;
+
+//ここから新しいhomeページ
+.main-title{
+	height:30px;
+	width: 90%;
+	text-aligin:center;
+	margin-left:5%;
 }
+.text1{
+	color:gray;
+	font-size:25px;
+	text-align: center;
+	margin:10px 0;
+}
+
+.box7{
+	height:40px;
+	width: 70%;
+	margin-left:15%;
+
+}
+.text5{
+	font-size:20px;
+	text-align: center;
+	padding-top:5px;
+	margin-top:10px;
+}
+.box4{
+	height:30px;
+	width: 90%;
+	margin-left:5%;
+}
+.text2{
+	font-size:15px;
+	text-align: center;
+	padding-top:5px;
+	margin-top:10px;
+}
+
+.box5{
+	height:30px;
+	width: 90%;
+	margin-left:5%;
+}
+.text3{
+	font-size:15px;
+	text-align: center;
+	padding-top:5px;
+	margin-top:10px;
+}
+
 .box1{
-	background-image: image-url("kyoto.jpg");
+	background-image: image-url("About.jpg");
 	background-size: cover;
+	height:350px;
+	width:350px;
+	margin:10px 0;
+	border-radius: 50%;
+}
+.boxy-title1{
+	color:white;
+	text-align: center;
+	padding-top:100px;
+	font-family: 'Permanent Marker', cursive;
+	font-size:100px;
+}
+.box1-title{
+	height:300px;
+	margin-top:40px;
+	background-color: #FFFFF0;
+}
+.titles1{
+	padding-top:25px;
+	padding-left:10px;
 }
 .box2{
 	background-image: image-url("hawai2.jpg");
 	background-size: cover;
+	height:350px;
+	width:350px;
+	border-radius: 50%;
+	margin:10px 0;
 }
-.box3{
-	background-image: image-url("hawai.jpg");
-	background-size: cover;
-}
-//aboutページ
-.head-title3{
-	background: linear-gradient(transparent 50%, #E9FFA5 50%);
-	padding: 5px 10px;
-	margin-left: 50px;
+.boxy-title2{
+	color:white;
 	text-align: center;
-	font-family: "Nico Moji";
+	padding-top:100px;
+	font-family: 'Permanent Marker', cursive;
+	font-size:100px;
 }
+.box2-title{
+	height:300px;
+	margin-top:40px;
+	background-color: #E0FFFF;
+}
+.titles2{
+	padding-top:25px;
+	padding-left:20px;
+}
+
+.box3{
+	background-image: image-url("Fuji.jpg");
+	background-size: cover;
+	height:350px;
+	width:350px;
+	border-radius: 50%;
+	margin:10px 0;
+}
+.boxy-title3{
+	color:white;
+	text-align: center;
+	padding-top:100px;
+	font-family: 'Permanent Marker', cursive;
+	font-size:100px;
+}
+.box3-title{
+	height:300px;
+	margin-top:40px;
+	background-color: #F5F5F5;
+}
+.titles3{
+	padding-top:25px;
+	padding-left:20px;
+}
+.box6{
+	height:50px;
+	width: 70%;
+	margin-left:15%;
+	margin-top:15px;
+}
+.titles4{
+	font-size:20px;
+	text-align: center;
+	padding-top:30px;
+}
+
+//aboutページ
+.containers{
+	height:400px;
+	background-size: cover;
+	background-position: center;
+	width:70%;
+	margin-left:15%;
+	margin-top:50px;
+	border: 10px solid white;
+}
+.image-title{
+	font-family: 'Permanent Marker', cursive;
+	color:white;
+	font-size:110px;
+	margin-left:30%;
+	margin-top:200px;
+}
+.image1{
+background-image: image-url("hawai.jpg");
+}
+.image2{
+background-image: image-url(".jpg");
+}
+.image3{
+background-image: image-url("japan.jpg");
+}
+.image4{
+background-image: image-url(".jpg");
+}
+.image5{
+background-image: image-url(".jpg");
+}
+
+.main-visual2 {
+ 	background-image: image-url("About.jpg");
+	background-size: cover;
+	background-position: center;
+	width: 70%;
+	height: 300px;
+	display: flex;
+	text-aligin:center;
+	margin-left:15%;
+}
+.main-visual-content2{
+	width: 100%;
+  	height: 300px;
+  	text-align: center;
+  	padding-top: 130px;
+}
+.main-visual-text2{
+	color:#FF6347;
+	font-size:90px;
+	font-family: 'Permanent Marker', cursive;
+}
+.main-visual-name2{
+	margin-top: 10px;
+  	color: #fff;
+  	font-size:30px;
+  	font-family: 'Permanent Marker', cursive;
+}
+
+.primary-title{
+	height:450px;
+	font-size:30px;
+	text-align: center;
+	margin-top:10px;
+	padding-top:15px;
+	font-family: "MS Pゴシック";
+	margin-left:0%;
+	background-image: image-url("old.jpg");
+	color:#E0FFFF;
+}
+.about-title1{
+	font-family: "Nico Moji";
+	font-size:30px;
+	text-align: left;
+}
+.about-title2{
+	font-family: "Nico Moji";
+	font-size:30px;
+	text-align: left;
+	margin-left:1%;
+}
+.about-title3{
+	font-family: "Nico Moji";
+	font-size:30px;
+	text-align: left;
+	margin-left:1%;
+}
+.about-title4{
+	font-family: "Nico Moji";
+	font-size:30px;
+	text-align: left;
+	margin-left:1%;
+}
+.about-title5{
+	font-family: "Nico Moji";
+	font-size:30px;
+	text-align: left;
+	margin-left:1%;
+}
+.about-name{
+	font-size:15px;
+	text-align: left;
+}
+.about-name2{
+	font-size:15px;
+	text-align: left;
+}
+
+
+
+

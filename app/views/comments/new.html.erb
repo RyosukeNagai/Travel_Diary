@@ -1,6 +1,17 @@
-<h2>コメント入力</h2>
-<%= form_for [@travel,@comment] do |f| %>
-
-    <%= f.text_field :comment %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<h2 class="comment-title"><b><%= @travel.user.name %>さんの投稿にコメントしよう♫</b></h2>
+		</div>
+	</div>
+</div>
+				<div class="col-xs-6 col-xs-offset-3">
+					<div class="comment-form">
+				<%= form_for [@travel,@comment] do |f| %>
+					<%= f.text_area :comment, class: "form-control", rows: 5 %>
+					</div>
+					<div class="comment-botan">
+    			<%= f.submit "コメントする", class:"btn btn-success",style:"margin-left:65px;padding:10px 50px;"%>
+    		</div>
+				<% end %>
+				</div>

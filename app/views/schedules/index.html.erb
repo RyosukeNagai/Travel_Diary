@@ -1,86 +1,134 @@
 <div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3">
-			<h2 class="head-title7"><b>〜 ＊スケジュール一覧 〜</b></h2>
-		</div>
-	</div>
+ <div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+   <h2 class="head-title7"><b>〜 ＊スケジュール一覧 〜</b></h2>
+  </div>
+ </div>
 </div>
 
-	<% @schedules.each do |schedule| %>
-  <div class="container">
-  <div class="row">
+<div class="col-xs-7">
+  <% @schedules.each do |schedule| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="year">
+          <b><%= schedule.year %></b>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2">
+        <div class="month">
+          <b><%= schedule.month %> /<%= schedule.day %></b>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="time">
+          <b><%= schedule.time %>:00〜</b>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="plan">
+          <b><%= schedule.plan %></b>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <div class="botan">
+          <%= link_to "編集する",edit_shiori_schedule_path(@shiori.id,schedule),class:"btn btn-warning",style:"font-size:10px;" %>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <div class="botan">
+          <%= link_to "削除する",shiori_schedule_path(@shiori,schedule),method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class:"btn btn-danger",style:"font-size:10px;"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="col-xs-5">
+ <%= form_for(@schedule,url:shiori_schedules_path) do |f| %>
+
+ <div class="row">
     <div class="col-xs-12">
-		<b><%= schedule.year %></b>
+      <h2 class="head-title10"><b>〜 スケジュール入力 〜</b></h2>
+    </div>
   </div>
-    <div class="col-xs-3">
-		<b><%= schedule.month %>/<%= schedule.day %></b>
+
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-4">
+      <b class="travel-form5">①year</b>
+    </div>
+    <div class="col-xs-5">
+      <div class="form-style">
+        <%= f.select :year, (2020..2050), include_blank:"例：20◯◯",style:"width:30%;"%>
+      </div>
+      </div>
+    </div>
+    <br>
+
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-4">
+     <b class="travel-form5">②month</b>
+    </div>
+    <div class="col-xs-5">
+      <div class="form-style">
+        <%= f.select :month, (1..12), include_blank: "例：◯月" %>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-3">
-		<b>・<%= schedule.time %>:00~</b>
+    <br>
+
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-4">
+     <b class="travel-form5">③day</b>
+    </div>
+    <div class="col-xs-5">
+      <div class="form-style">
+        <%= f.select :day, (1..31), include_blank: "例：◯日"%>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-4">
-		<b><%= schedule.plan %></b>
+    <br>
+
+    <div class="row">
+    <div class="col-xs-3 col-xs-offset-4">
+     <b class="travel-form5">④time</b>
+    </div>
+    <div class="col-xs-5">
+      <div class="form-style">
+        <%= f.select :time, (0..24), include_blank:"例：9:00~"%>
+      </div>
+    </div>
   </div>
+    <br>
+
+    <div class="row">
+    <div class="col-xs-3 col-xs-offset-4">
+     <b class="travel-form5">⑤plan</b>
+    </div>
+    <div class="col-xs-5">
+      <div class="form-style">
+        <%= f.text_area :plan, include_blank:"例：◯◯に到着" %>
+      </div>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="tyu" >
+    <b> ※ </b>同じ日付の日程を追加の場合は、④・⑤のみ入力してください。
+    </div>
+
 </div>
-		<% end %>
 
-
-	<%= form_for(@schedule,url:shiori_schedules_path) do |f| %>
-
-<div class="container">
-	<div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <h2 class="head-title8"><b>〜 スケジュール入力 〜</b></h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
-      <b class="travel-form4">year</b>
-    </div>
-    <div class="col-xs-6">
-      <%= f.text_field :year, placeholder:"例：20◯◯"%>
-    </div>
-  </div>
-    <br>
-  <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
-    	<b class="travel-form4">month</b>
-    </div>
-    <div class="col-xs-6">
-    	<%= f.text_field :month, placeholder:"例：◯月"%>
-    </div>
-  </div>
-    <br>
-  <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
-    	<b class="travel-form4">day</b>
-    </div>
-    <div class="col-xs-6">
-    	<%= f.text_field :day, placeholder:"例：◯日"%>
-    </div>
-  </div>
-    <br>
-    <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
-    	<b class="travel-form4">time</b>
-    </div>
-    <div class="col-xs-6">
-    	<%= f.text_field :time, placeholder:"例：9:00~"%>
-    </div>
-  </div>
-    <br>
-    <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
-    	<b class="travel-form4">plan</b>
-    </div>
-    <div class="col-xs-6">
-    	<%= f.text_area :plan, placeholder:"例：◯◯に到着" ,style:"width:40%;"%>
-    </div>
-  </div>
-    <br>
   <div class="row">
     <div class="col-xs-2 col-xs-offset-5">
-      <%= f.submit "投稿する", class:"btn btn-primary active",style:"margin-left:65px;padding:10px 50px;"%>
+      <%= f.submit "投稿する", class:"btn btn-info active",style:"margin-left:65px;padding:10px 50px;"%>
     </div>
   </div>
     <% end %>
+  </div>
+
+      <div class="back-botan">
+        <i class="far fa-hand-point-left"></i>
+        <%= link_to "Back",shiori_path(@shiori.id), style:"margin-top:15px;"%>
+      </div>

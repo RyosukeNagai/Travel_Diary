@@ -5,7 +5,15 @@
   padding: 0;
   margin: 0;
 }
+
 //index ページ
+.head-title12{
+	background: linear-gradient(transparent 50%, #FFC7AF 50%);
+	padding: 5px 10px;
+	margin-left: 15%;
+	text-align: center;
+	font-family: "Nico Moji";
+}
 .new-button2{
 	font-family: "Nico Moji";
 	position: fixed;
@@ -48,8 +56,6 @@
  background-position:center;
  margin-bottom:25px;
 }
-.hoge{
-}
 
 //editページ
 .head-title7{
@@ -62,24 +68,29 @@
 
 //showページ
 .shiori-title{
-	background: linear-gradient(transparent 60%, #00CC99 50%);
+	background: linear-gradient(transparent 70%, #00CC99 50%);
 	margin: 15px 10px;
 	margin-left: 40%;
 	text-align: center;
-	font-size:35px;
+	font-size:25px;
 	font-family: "Nico Moji";
 	width:200px;
 }
 .shiori-image{
-	width:600px;
+	width:700px;
 	height:450px;
 	background-size: cover;
-	margin-left:15%;
+	margin-left:20%;
 }
 .side-bar{
 	font-family: "Nico Moji";
 	font-size:25px;
 	margin-bottom:10px;
 	background: linear-gradient(transparent 90%, gray );
+	margin-left:2%;
 }
-
+.shioris-image{
+	margin-left:73%;
+}
+.hoge{
+}

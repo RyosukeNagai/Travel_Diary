@@ -1,109 +1,139 @@
 <div class="container">
- <div class="row" style="margin-left: 20%;">
-  <div class="col-xs-10 col-xs-offset-1">
-   
-   <div class="user-image">
-    <div class="col-xs-2"> 
-     <%= attachment_image_tag @user,:user_image,:fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circle" %>
+ <div class="row">
+  <div class="col-xs-12">
+    <div class="col-xs-4">
+      <div class="userr-image">
+        <%= link_to (@travel.user) do %>
+          <%= attachment_image_tag @user,:user_image,:fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circle" %>
+        <% end %>
+      </div>
     </div>
-   </div>
 
-   <div class="user-table">
-    <div class="col-xs-3">
-     <p>ニックネーム</p>
+    <div class="col-xs-2">
+      <div class="travelerr">
+        <p>ニックネーム</p>
+      </div>
     </div>
-    <div class="hoge">
-     <div class="col-xs-7">
-      <p><%= @user.name %></p>
-     </div>
+    <div class="col-xs-6">
+      <div class="travelerr">
+        <%= link_to (@travel.user) do %>
+          <p><%= @user.name %></p>
+        <% end %>
+      </div>
     </div>
-   </div>
-
-   <div class="user-table2">
-    <div class="col-xs-3">
-     <p>タイトル</p>
     </div>
-    <div class="col-xs-7">
-     <b><%= @travel.title %><b>
-    </div>
-   </div>
-
-   <div class="user-table2">
-   <div class="col-xs-3">
-    <b>旅行先住所</b>
   </div>
-    <div class="col-xs-3">
-    <b><%= @travel.address %><b>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-6" style="padding-left: 400px;">
+        <div class="traverr-title">
+          <p>タイトル</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="traverr-title">
+          <b><%= @travel.title %></b>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-6" style="padding-left: 400px;">
+        <div class="travel-address">
+          <b>旅行先住所</b>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="travel-address">
+          <b><%= @travel.address %></b>
+        </div>
+      </div>
+    </div>
   </div>  
- </div>
-</div >
-<div class="row" style="margin-right: 250px;">
-<div class="show-image">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="show-image">
           <%= attachment_image_tag @travel,:travel_image,format:"jpg",
                   fallback:"travel-no-image.jpg", class:"travel-image" %>
         </div>
       </div>
+    </div>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-2">
+      <%= link_to new_travel_comment_path(@travel),method: :get do %>
+        <div class="travels-tables">
+          <p>コメントする</p>
+        </div>
+      <% end %>
+    </div>
 
-        <div class="container">
+    <!-- いいね -->
+    <div class="col-xs-2">
+      <div id="favorites_buttons_<%= @travel.id %>">
+             <%= render partial: 'favorites/favorite', locals: { travel: @travel} %>
+    </div>
+  </div>
+    <!-- いいね終わり -->
+    <div class="col-xs-2">
+      <div class="travel-botann">
+        <% if @travel.user == current_user %>
+        <%= link_to "投稿を編集する",edit_travel_path(@travel),
+                  class: "btn btn-success" %>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="travel-botann2">
+        <%= link_to "投稿を削除する",travel_path(@travel), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},
+                  class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-          <div class="row" style="margin-left: 30%;">
-            <div class="col-xs-2 col-xs-offset-4">
-              <div class="travel-table">
-                <%= link_to new_travel_comment_path(@travel),method: :get do %><p class="travel-table">コメントする</p><% end %>
-              </div>              
-            </div>
-            <!-- いいね -->
-            <div class="col-xs-6">
-              <% if @travel.favorited_by?(current_user) %>
-                <%= link_to travel_favorites_path(@travel), method: :delete do %>
-                  <%= content_tag :span, "", class: "glyphicon glyphicon-heart red" %>
-                  <%= @travel.favorites.count %>
-                <% end %>
-              <% else %>
-                <%= link_to travel_favorites_path(@travel), method: :post do %>
-                  <%= content_tag :span, "", class: "glyphicon glyphicon-heart-empty" %>
-                  <%= @travel.favorites.count %>
-                <% end %>
-              <% end %>
-            </div>
-            <!-- いいね終わり -->
-          </div>
-
-          <div class="row">
-            <div class="col-xs-2 col-xs-offset-4">
-              <p class="travel-table">ないよう</p>
-            </div>
-            <div class="col-xs-6">
-              <%= @travel.body %>
-            </div>
-          </div>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-2">
+      <div class="travels-tables">
+        <p>ないよう</p>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="travels-tables2">
+        <b><%= @travel.body %></b>
+      </div>
+    </div>
+  </div>
 
           <!-- コメント -->
-          <div class="row">
-            <div class="col-xs-2 col-xs-offset-4">
-              <p class="comment">コメント一覧</p>
-            </div>
-            <div class="col-xs-6">
-              <% @travel.comments.each do |comment| %>
-                <%= comment.user.name %>
-                <%= comment.comment %>
-            </div>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <div class="commentts">
+        <p><b>コメント一覧</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% @travel.comments.each do |comment| %>
+        <div class="col-xs-2 col-xs-offset-3">
+          <div class="commentts2">
+            <%= link_to (@travel.user) do %>
+            <b>@<%= comment.user.name%>　➡︎</b>
+            <% end %>
           </div>
-          <!-- コメント削除 -->
+        </div>
+        <div class="col-xs-5">
+          <b><%= comment.comment %></b>
+        </div>
+        <div class="col-xs-2">
           <% if comment.user == current_user %>
-          <%= link_to "Destroy", comment_path(comment), class: "btn-sm btn-danger", method: :delete, data:{confirm: "本当に消しますか？"} %>
+            <%= link_to "Destroy", comment_path(comment), class: "btn-sm btn-danger", method: :delete, data:{confirm: "本当に消しますか？"} %>
           <% end %>
-          <% end %>
-
-          <div class="edit">
-          <%= link_to "編集する",edit_travel_path(@travel),
-                  class: "btn btn-success" %>
-                </div>
-
-        <div class="destroy">
-          <%= link_to "削除する",travel_path(@travel), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},
-                  class: "btn btn-danger" %>
-                </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 

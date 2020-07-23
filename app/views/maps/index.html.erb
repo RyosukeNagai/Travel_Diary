@@ -1,0 +1,67 @@
+<div class="container">
+ <div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+   <h2 class="head-title12"><b>〜 ＊旅行前に目的地を確認 〜</b></h2>
+  </div>
+ </div>
+</div>
+
+<!-- 地名入力用のinputを追加 -->
+<div class="row">
+  <div class="map-sarch">
+  <div class="col-xs-6 col-xs-offset-3">
+<input id="address" type="textbox" value="大阪　難波">
+<!-- buttonをクリックしたらcodeAddressを実行　-->
+<input type="button" value="検索" onclick="codeAddress()">
+</div>
+</div>
+ </div>
+<div id='map'>
+</div>
+</div>
+ </div>
+
+<style>
+</style>
+
+<script>
+/*
+mapを関数の外で定義(codeAddressでも使うため)
+geocoderを用意
+*/
+
+let map
+let geocoder
+
+function initMap(){
+  // geocoderを初期化
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 34.663411, lng: 135.50191},
+  zoom: 8
+  });
+}
+
+function codeAddress(){
+  // 入力を取得
+  let inputAddress = document.getElementById('address').value;
+
+  // geocodingしたあとmapを移動
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+　　　　　　　　　　　　// map.setCenterで地図が移動
+      map.setCenter(results[0].geometry.location);
+
+　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhsWz7NcG7jpP1szDfFa1lHqoHv4_Qjs8&callback=initMap" async defer></script>

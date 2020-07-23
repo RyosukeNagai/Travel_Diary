@@ -1,0 +1,13 @@
+<% if user_signed_in? %> 
+ <% if travel.favorited_by?(current_user) %>
+   <%= link_to travel_favorites_path(travel.id), method: :delete, remote: true do %>
+   <i class="glyphicon glyphicon-heart" ariaa-hidden="true" style="color:red;"></i>
+   <% end %>
+   <%= travel.favorites.count %>
+ <% else %>
+   <%= link_to travel_favorites_path(travel.id), method: :post, remote: true do %>
+     <%= content_tag :span, "", class: "glyphicon glyphicon-heart-empty" %>
+   <% end %>
+   <%= travel.favorites.count %>
+ <% end %>
+<% end %>

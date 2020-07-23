@@ -38,7 +38,7 @@
                 <td><%= souvenir.count%></td>
                 <td><%= souvenir.price %>円</td>
                 <td><%= link_to "削除する",shiori_souvenir_path(@shiori,souvenir),
-              method: :delete ,class:"btn btn-danger" %></td>
+              method: :delete, data: {confirm:"本当に削除してよろしいですか？"},class:"btn btn-danger" %></td>
             </tr>
         <% end %>
       </div>
@@ -75,7 +75,7 @@
     	<b class="travel-form4">個数</b>
     </div>
     <div class="col-xs-6">
-    	<%= f.text_area :count ,style:"width:40%;"%><b>個</b>
+    	<%= f.text_area :count ,style:"width:40%;", placeholder:"※半角で入力して下さい"%><b>個</b>
     </div>
   </div>
     <br>
@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="col-xs-6">
-    	<%= f.text_field :price ,style:"width:40%;"%><b>円</b>
+    	<%= f.text_field :price ,style:"width:40%;", placeholder:"※半角で入力して下さい"%><b>円</b>
     </div>
   </div>
     <br>
@@ -97,4 +97,10 @@
   </div>
     <% end %>
 </div>
+
+<div class="back-botan">
+        <i class="far fa-hand-point-left"></i>
+        <%= link_to "Back",shiori_path(@shiori.id) %>
+      </div>
+
 

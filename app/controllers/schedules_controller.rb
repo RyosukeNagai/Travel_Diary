@@ -14,12 +14,24 @@ class SchedulesController < ApplicationController
   end
 
   def edit
+    @shiori = Shiori.find(params[:shiori_id])
+    @schedule = Schedule.find(params[:id])
   end
 
   def update
+    @shiori = Shiori.find(params[:shiori_id])
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
+      redirect_to shiori_schedules_path(@shiori)
+    else
+      render "edit"
+    end
   end
 
   def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private

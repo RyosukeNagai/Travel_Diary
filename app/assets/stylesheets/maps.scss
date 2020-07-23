@@ -1,0 +1,20 @@
+// Place all the styles related to the maps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#map{
+  height: 700px;
+  width:80%;
+  margin-left:10%;
+  margin-top:30px;
+}
+.map-sarch{
+	margin-left:26%;
+}
+.head-title12{
+	background: linear-gradient(transparent 60%, #99FF99 40%);
+	padding: 5px 10px;
+	margin-bottom:25px;
+	margin-left: 15%;
+	text-align: center;
+	font-family: "Nico Moji";
+}

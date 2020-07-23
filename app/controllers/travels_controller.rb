@@ -1,6 +1,7 @@
 class TravelsController < ApplicationController
   def index
-    @travels = Travel.all
+    @q = Travel.ransack(params[:q])
+    @travels = @q.result(distinct: true)
   end
 
   def show
@@ -18,7 +19,7 @@ class TravelsController < ApplicationController
       @travel.user_id = current_user.id
     if
       @travel.save
-      redirect_to @travel
+      redirect_to travels_path
     else
       render "new"
     end

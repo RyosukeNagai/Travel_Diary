@@ -4,6 +4,7 @@ class Shiori < ApplicationRecord
 	has_many :preparations, dependent: :destroy
 	has_many :souvenirs, dependent: :destroy
 	attachment :shiori_image, destroy: false
+	validates :title, presence: true
 
 	default_scope -> { order(created_at: :desc) }
 	def favorited_by?(user)

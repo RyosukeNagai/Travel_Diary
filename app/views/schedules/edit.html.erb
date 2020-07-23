@@ -1,2 +1,76 @@
-<h1>Schedules#edit</h1>
-<p>Find me in app/views/schedules/edit.html.erb</p>
+
+<%= form_for [@shiori,@schedule] do |f| %>
+<div class="container">
+ <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h2 class="head-title10"><b>〜 スケジュールの変更 〜</b></h2>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+      <b class="travel-form5">① year</b>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-style">
+        <%= f.select :year, (2020..2050), include_blank:"例：20◯◯",style:"width:30%;"%>
+      </div>
+      </div>
+    </div>
+    <br>
+
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+     <b class="travel-form5">②month</b>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-style">
+        <%= f.select :month, (1..12), include_blank: "例：◯月" %>
+      </div>
+    </div>
+  </div>
+    <br>
+
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+     <b class="travel-form5">③ day</b>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-style">
+        <%= f.select :day, (1..31), include_blank: "例：◯日"%>
+      </div>
+    </div>
+  </div>
+    <br>
+
+    <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+     <b class="travel-form5">④ time</b>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-style">
+        <%= f.select :time, (0..24), include_blank:"例：9:00~"%>
+      </div>
+    </div>
+  </div>
+    <br>
+
+    <div class="row">
+    <div class="col-xs-1 col-xs-offset-5">
+     <b class="travel-form5">⑤ plan</b>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-style">
+        <%= f.text_area :plan, include_blank:"例：◯◯に到着" %>
+      </div>
+    </div>
+  </div>
+    <br>
+
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-5">
+      <%= f.submit "変更する", class:"btn btn-success",style:"margin-left:65px;padding:10px 50px;"%>
+    </div>
+  </div>
+    <% end %>

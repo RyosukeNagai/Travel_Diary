@@ -26,3 +26,4 @@ class SouvenirsController < ApplicationController
   	params.require(:souvenir).permit(:name, :count, :price,:shiori_id)
   end
 end
+

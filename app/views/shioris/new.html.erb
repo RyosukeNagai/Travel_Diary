@@ -1,18 +1,30 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-5 col-xs-offset-4">
-			<h2 class="head-title4">〜 しおりを作成しよう♪ 〜</h2>
+			<h2 class="head-title12">〜 しおりを作成しよう♪ 〜</h2>
 		</div>
 	</div>
+
+
 	<%= form_for(@shiori, url:shioris_path) do |f| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
 		<% if @shiori.errors.any? %>
-      <h3><%= @shiori.errors.count %>eroor</h3>
+    <div class="error">
+      <div class="error-message">
+      <h3><%= @shiori.errors.count %>つのエラーメッセージ</h3>
+    </div>
         <ul>
           <% @shiori.errors.full_messages.each do |message| %>
+          <div class="message2">
               <li><%= message %></li>
+            </div>
           <% end %>
         </ul>
       <% end %>
+      </div>
+    </div>
+  </div>
 
     <div class="row">
   		<div class="col-xs-2 col-xs-offset-4">

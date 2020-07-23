@@ -38,7 +38,7 @@ class PreparationsController < ApplicationController
 private
 
   def preparation_params
-    params.require(:preparation).permit(:name, :shiori_id)
+    params.require(:preparation).permit(:name, :shiori_id, :is_active)
   end
 end
 

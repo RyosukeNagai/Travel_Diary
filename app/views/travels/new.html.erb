@@ -4,15 +4,26 @@
 			<h2 class="head-title4">〜 投稿しよう♪ 〜</h2>
 		</div>
 	</div>
+
 	<%= form_for(@travel, url:travels_path) do |f| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
 		<% if @travel.errors.any? %>
-      <h3><%= @travel.errors.count %>eroor</h3>
+    <div class="error">
+      <div class="error-message">
+      <h3><%= @travel.errors.count %>つのエラーメッセージ</h3>
+    </div>
         <ul>
           <% @travel.errors.full_messages.each do |message| %>
+          <div class="message2">
               <li><%= message %></li>
+            </div>
           <% end %>
         </ul>
       <% end %>
+      </div>
+    </div>
+    </div>
 
     <div class="row">
   		<div class="col-xs-1 col-xs-offset-5">

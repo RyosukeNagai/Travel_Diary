@@ -22,6 +22,39 @@
 	padding:0;
 }
 
+
+.containers{
+	height:380px;
+	background-size: cover;
+	background-position: center;
+	width:80%;
+	margin-left:10%;
+	margin-top:50px;
+	border: 10px solid white;
+}
+.image-title{
+	font-family: 'Permanent Marker', cursive;
+	color:white;
+	font-size:110px;
+	margin-left:30%;
+	margin-top:125px;
+}
+.image1{
+background-image: image-url("holiday.jpg");
+}
+.image2{
+background-image: image-url("times.jpg");
+}
+.image3{
+background-image: image-url("pari.jpg");
+}
+.image4{
+background-image: image-url("Kyoto.jpg");
+}
+.image5{
+background-image: image-url("travel.jpg");
+}
+
 // ログイン・新規登録画面
 .head-title{
 	background: linear-gradient(transparent 50%, #a8eaff 50%);
@@ -76,11 +109,20 @@
 .title{
 	font-family: 'Teko', sans-serif;
 	color:#EC8B5E;
-	font-size:55px;
+	font-size:60px;
 	margin-left:5%;
-	margin:30px 0px;
+	margin-top:15px;
 	border-bottom: solid 3px;
 }
+.nam-ti{
+	font-size:100px;
+	color:navy;
+}
+.nam-ti2{
+	font-size:80px;
+	color:navy;
+}
+
 header{
  	margin-bottom: 30px;
 }
@@ -98,15 +140,15 @@ header{
  width: 100%;
 }
 .nav-item-name{
-	color:#FF6699;
+	color:#696969;
 	padding-left:35%;
-	font-size:25px;
+	font-size:35px;
 	font-family: 'Teko', sans-serif;
 	padding:5px 0;
 }
 .nav-item{
 	color:white;
-	font-size:15px;
+	font-size:17px;
 	margin-right:5px;
 	font-family: 'Permanent Marker', cursive;
 }

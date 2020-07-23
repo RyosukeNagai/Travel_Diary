@@ -9,14 +9,22 @@
 
     <div class="row">
       <div class="col-xs-6">
-        <p class="preparation-title">✅</p>
+      <%= form_for(preparation,url:shiori_preparation_path(@shiori,preparation)) do |form| %>
+        <div class="field">
+          <%= form.check_box :is_active, checked: preparation.is_active %>
+        </div>
+
       </div>
       <div class="col-xs-6">
         <div class="new-preparation">
       <b>・<%= preparation.name %></b>
-      <%= link_to "編集する",edit_shiori_preparation_path(@shiori.id,preparation),class:"btn btn-warning",style:"font-size:10px;"%>
 
-      <%= link_to "削除する",shiori_preparation_path(@shiori,preparation),method: :delete,class:"btn btn-danger",style:"font-size:10px;"%>
+      <%= form.submit "チェックの保存", class:"btn btn-primary active",style:"font-size:12px;"%>
+      <% end %>
+
+      <%= link_to "編集する",edit_shiori_preparation_path(@shiori.id,preparation),class:"btn btn-warning",style:"font-size:12px;"%>
+
+      <%= link_to "削除する",shiori_preparation_path(@shiori,preparation),method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class:"btn btn-danger",style:"font-size:12px;"%>
     </div>
     </div>
   </div>
@@ -54,4 +62,8 @@
     </div>
   </div>
     <% end %>
-</div>
+
+<div class="back-botan2">
+        <i class="far fa-hand-point-left"></i>
+        <%= link_to "Back",shiori_path(@shiori.id) %>
+      </div>
