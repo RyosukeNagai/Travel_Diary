@@ -18,8 +18,7 @@ class ShiorisController < ApplicationController
   def create
       @shiori = Shiori.new(shiori_params)
       @shiori.user_id = current_user.id
-    if
-      @shiori.save
+    if @shiori.save
       redirect_to shioris_path(current_user)
     else
       render "new"
