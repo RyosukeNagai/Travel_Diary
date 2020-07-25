@@ -49,6 +49,6 @@ class ShiorisController < ApplicationController
 private
 
   def shiori_params
-    params.require(:shiori).permit(:title, :body, :shiori_image,:user_id)
+    params.require(:shiori).permit(:title, :body,:user_id, :shiori_image)
   end
 end
