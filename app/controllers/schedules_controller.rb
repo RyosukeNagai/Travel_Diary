@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
   def index
     @shiori = Shiori.find(params[:shiori_id])
     @schedule = Schedule.new
-    @schedules = Schedule.where(shiori_id: @shiori.id)
+    @schedules = Schedule.where(shiori_id: @shiori.id).order("year","month","day","time")
   end
 
   def create
