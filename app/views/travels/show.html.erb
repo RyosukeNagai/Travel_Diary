@@ -120,7 +120,7 @@
       <% @travel.comments.each do |comment| %>
         <div class="col-xs-2 col-xs-offset-3">
           <div class="commentts2">
-            <%= link_to (@travel.user) do %>
+            <%= link_to (comment.user) do %>
             <b>@<%= comment.user.name%>　➡︎</b>
             <% end %>
           </div>
