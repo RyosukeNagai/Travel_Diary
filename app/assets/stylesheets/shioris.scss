@@ -47,7 +47,7 @@
 .shioris-title{
 	font-family: "Nico Moji";
 	font-size:18px;
-	margin-left:35%;
+	margin-left:20%;
 	padding:10px 0;
 	color:#000033;
 }
@@ -65,26 +65,27 @@
 	text-align: center;
 	font-family: "Nico Moji";
 }
-
+.travel-forms{
+	margin-left: 32%;
+	font-family: "Nico Moji";
+	font-size:20px;
+}
 //showページ
 .shiori-title{
 	background: linear-gradient(transparent 70%, #00CC99 50%);
-	margin: 15px 10px;
-	margin-left: 40%;
 	text-align: center;
-	font-size:25px;
+	font-size:30px;
 	font-family: "Nico Moji";
 	width:200px;
+	margin-top:15px;
 }
 .shiori-image{
-	width:700px;
-	height:450px;
 	background-size: cover;
-	margin-left:20%;
+	text-align:center;
 }
 .side-bar{
 	font-family: "Nico Moji";
-	font-size:25px;
+	font-size:20px;
 	margin-bottom:10px;
 	background: linear-gradient(transparent 90%, gray );
 	margin-left:2%;

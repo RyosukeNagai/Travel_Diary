@@ -4,9 +4,9 @@
     <div class="col-xs-4">
      <div class="each-image">
       <div class="travels-ti">
-      <b>@タイトル _ <%= travel.title %></b></div>
+      <b>#<%= travel.title %></b></div>
       <%= link_to (travel) do %>
-      <%= attachment_image_tag travel, :travel_image, :fill, 350, 300, fallback: "travel-no-image-mini.jpg" %>
+      <%= attachment_image_tag travel, :travel_image, :fill, 230, 160, fallback: "travel-no-image-mini.jpg", size: "230x160" %>
       <% end %><br>
      </div> 
     </div>

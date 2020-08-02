@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-6 col-xs-offset-3">
       <h2 class="head-title2">〜 ログイン 〜</h2>
     </div>
   </div>
@@ -8,11 +8,13 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="row">
-    <div class="col-xs-2 col-xs-offset-4">
+    <div class="col-xs-3 col-xs-offset-3">
+      <div class="b" style="margin-left: 35%;">
       <%= f.label :email %><br />
     </div>
+    </div>
     <div class="col-xs-6">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:" emailを入力してください",style:"width:45%" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:" emailを入力してください",style:"width:60%" %>
     </div>
   </div>
   <br>
@@ -22,7 +24,7 @@
       <%= f.label :password %><br />
     </div>
     <div class="col-xs-6">
-      <%= f.password_field :password, autocomplete: "current-password",placeholder:" パスワードを入力してください",style:"width:45%" %>
+      <%= f.password_field :password, autocomplete: "current-password",placeholder:" パスワードを入力してください",style:"width:60%" %>
     </div>
   </div>
   <br>

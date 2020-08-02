@@ -6,7 +6,7 @@
 	</div>
 
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-10 col-xs-offset-1">
       <div>
       <% @sum = 0 %>
       <% @souvenirs.each do |souvenir| %>
@@ -17,7 +17,7 @@
         <b>合計金額(税込)</b>
       </div>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <div class="total-price">
       <b><%= @sum.to_i %>円</b>
     </div>
@@ -62,37 +62,37 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
+    <div class="col-xs-2 col-xs-offset-4">
       <b class="travel-form4">商品名</b>
     </div>
     <div class="col-xs-6">
-      <%= f.text_field :name, placeholder:"例：東京ばな奈"%>
+      <%= f.text_field :name,style:"width:50%;", placeholder:"例：東京ばな奈"%>
     </div>
   </div>
     <br>
   <div class="row">
-    <div class="col-xs-1 col-xs-offset-5">
+    <div class="col-xs-2 col-xs-offset-4">
     	<b class="travel-form4">個数</b>
     </div>
     <div class="col-xs-6">
-    	<%= f.text_area :count ,style:"width:40%;", placeholder:"※半角で入力して下さい"%><b>個</b>
+    	<%= f.text_area :count ,style:"width:50%;", placeholder:"※半角で入力して下さい"%><b> 個</b>
     </div>
   </div>
     <br>
   <div class="row">
-    <div class="col-xs-3 col-xs-offset-3">
+    <div class="col-xs-5 col-xs-offset-1">
       <div class="travel-form3">
     		<b>単価（税抜き）</b>
       </div>
     </div>
     <div class="col-xs-6">
-    	<%= f.text_field :price ,style:"width:40%;", placeholder:"※半角で入力して下さい"%><b>円</b>
+    	<%= f.text_field :price ,style:"width:50%;", placeholder:"※半角で入力して下さい"%><b> 円</b>
     </div>
   </div>
     <br>
   <div class="row">
     <div class="col-xs-2 col-xs-offset-5">
-      <%= f.submit "投稿する", class:"btn btn-primary active",style:"margin-left:65px;padding:10px 50px;"%>
+      <%= f.submit "投稿する", class:"btn btn-primary active",style:"margin-left:20px;padding:10px 50px;"%>
     </div>
   </div>
     <% end %>

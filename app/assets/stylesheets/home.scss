@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 // トップ画面
 .main-visual {
  	background-image: image-url("maldives.jpg");
@@ -24,7 +25,9 @@
 }
 .main-visual-text{
 	color:white;
+	margin-left:6%;
 	font-size:80px;
+	margin-top:50px;
 	font-family: 'Permanent Marker', cursive;
 }
 .main-visual-name{
@@ -32,6 +35,7 @@
   	color: #fff;
   	font-size:30px;
   	font-family: 'Permanent Marker', cursive;
+  	margin-left:10%;
 }
 .main-name2{
 	margin-top: 40px;
@@ -58,8 +62,8 @@
 
 .box7{
 	height:40px;
-	width: 70%;
-	margin-left:15%;
+	width: 80%;
+	margin-left:10%;
 
 }
 .text5{
@@ -95,22 +99,23 @@
 .box1{
 	background-image: image-url("About.jpg");
 	background-size: cover;
-	height:350px;
-	width:350px;
-	margin:10px 0;
+	height:240px;
+	width:240px;
+	margin:60px 0;
 	border-radius: 50%;
 }
 .boxy-title1{
 	color:white;
 	text-align: center;
-	padding-top:100px;
+	padding-top:70px;
 	font-family: 'Permanent Marker', cursive;
-	font-size:100px;
+	font-size:70px;
 }
 .box1-title{
-	height:300px;
-	margin-top:40px;
+	height:auto;
+	margin-top:60px;
 	background-color: #FFFFF0;
+	padding-bottom:10px;
 }
 .titles1{
 	padding-top:25px;
@@ -119,22 +124,23 @@
 .box2{
 	background-image: image-url("hawai2.jpg");
 	background-size: cover;
-	height:350px;
-	width:350px;
+	height:240px;
+	width:240px;
 	border-radius: 50%;
-	margin:10px 0;
+	margin:60px 0;
 }
 .boxy-title2{
 	color:white;
 	text-align: center;
-	padding-top:100px;
+	padding-top:70px;
 	font-family: 'Permanent Marker', cursive;
-	font-size:100px;
+	font-size:70px;
 }
 .box2-title{
-	height:300px;
-	margin-top:40px;
+	height:auto;
+	margin-top:60px;
 	background-color: #E0FFFF;
+	padding-bottom:10px;
 }
 .titles2{
 	padding-top:25px;
@@ -144,22 +150,23 @@
 .box3{
 	background-image: image-url("Fuji.jpg");
 	background-size: cover;
-	height:350px;
-	width:350px;
+	height:240px;
+	width:240px;
 	border-radius: 50%;
-	margin:10px 0;
+	margin:60px 0;
 }
 .boxy-title3{
 	color:white;
 	text-align: center;
-	padding-top:100px;
+	padding-top:70px;
 	font-family: 'Permanent Marker', cursive;
-	font-size:100px;
+	font-size:70px;
 }
 .box3-title{
-	height:300px;
-	margin-top:40px;
+	height:auto;
+	margin-top:60px;
 	background-color: #F5F5F5;
+	padding-bottom:10px;
 }
 .titles3{
 	padding-top:25px;
@@ -187,27 +194,28 @@
 	margin-top:50px;
 	border: 10px solid white;
 }
-.image-title{
+.image-titles{
 	font-family: 'Permanent Marker', cursive;
 	color:white;
 	font-size:110px;
-	margin-left:30%;
-	margin-top:200px;
+	text-align: center;
+	margin-top:100px;
+	width:100%;
 }
 .image1{
-background-image: image-url("hawai.jpg");
+background-image: image-url("holiday.jpg");
 }
 .image2{
-background-image: image-url(".jpg");
+background-image: image-url("times.jpg");
 }
 .image3{
 background-image: image-url("japan.jpg");
 }
 .image4{
-background-image: image-url(".jpg");
+background-image: image-url("pari.jpg");
 }
 .image5{
-background-image: image-url(".jpg");
+background-image: image-url("travel.jpg");
 }
 
 .main-visual2 {
@@ -239,15 +247,15 @@ background-image: image-url(".jpg");
 }
 
 .primary-title{
-	height:450px;
+	height:480px;
 	font-size:30px;
 	text-align: center;
-	margin-top:10px;
-	padding-top:15px;
+	margin-top:20px;
+	padding-top:25px;
 	font-family: "MS Pゴシック";
-	margin-left:0%;
 	background-image: image-url("old.jpg");
 	color:#E0FFFF;
+	width:100%;
 }
 .about-title1{
 	font-family: "Nico Moji";

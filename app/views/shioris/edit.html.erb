@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-5 col-xs-offset-4">
+		<div class="col-xs-8 col-xs-offset-2">
 			<h2 class="head-title7">〜 しおりを編集しよう♪ 〜</h2>
 		</div>
 	</div>
@@ -15,18 +15,18 @@
       <% end %>
 
     <div class="row">
-  		<div class="col-xs-2 col-xs-offset-4">
+  		<div class="col-xs-4 col-xs-offset-2">
         <p class="travel-form" style="margin-left:33%;">しおりタイトル</p>
     	</div>
     	<div class="col-xs-6">
-              <%= f.text_field :title %>
+              <%= f.text_field :title ,style:"margin-top:10px;"%>
           </div>
     </div>
     <br>
     
     <div class="row">
-    	<div class="col-xs-1 col-xs-offset-5">
-    		<p class="travel-form">メモ</p>
+    	<div class="col-xs-4 col-xs-offset-2">
+    		<p class="travel-forms">メモ</p>
     	</div>
     	<div class="col-xs-6">
     		<%= f.text_area :body ,style:"width:40%;"%>
@@ -35,17 +35,17 @@
     <br>
 
     <div class="row">
-      <div class="col-xs-1 col-xs-offset-5">
-        <p class="travel-form">image</p>
+      <div class="col-xs-4 col-xs-offset-2">
+        <p class="travel-forms">image</p>
       </div>
       <div class="col-xs-6">
-    <%= f.attachment_field :shiori_image %>
+    <%= f.attachment_field :shiori_image ,style:"margin-top:10px;"%>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-2 col-xs-offset-5">
-    <%= f.submit "完了", class:"btn btn-success active",style:"margin-left:90px;padding:10px 50px;"%>
+    <%= f.submit "完了", class:"btn btn-success active",style:"margin-left:15px;padding:10px 50px;margin-top:20px;"%>
     </div>
   </div>
 
