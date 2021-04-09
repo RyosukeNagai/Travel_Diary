@@ -38,11 +38,7 @@
 	}
 	//homeのページ
 	.main-visual {
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		height: 400px;	
+		background-position: bottom;
 	 &__content{
 		 padding-top: 65%;
 	 }
