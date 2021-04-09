@@ -38,11 +38,8 @@
 	}
 	//homeのページ
 	.main-visual {
-	background-size: 800px;
-	background-repeat: no-repeat;
-	height: 800px;
 	 &__content{
-		 padding-top: 65%;
+		 padding-top: 5%;
 	 }
 	
 	 &__text{
@@ -53,6 +50,7 @@
 	 &__texts{
 		 font-size:45px;
 		 margin-left: 13%;
+		 margin-top: 0;
 	 }
 	
 	
