@@ -27,7 +27,7 @@
     </p>
 	</div>
 	<div class="hero__footer">
-		<img class="hero__downarrow" src="assets/arrow.svg">
+		<%= image_tag asset_path('arrow.svg'), class:"hero__downarrow" %>
 		<span class="hero__scrolltext">scroll</span>
 	</div>
 </div>
@@ -39,7 +39,7 @@
 		<section class="travel fadein">
 			<div class="travel__inner fadein">
 				<div class="travel__img cover-slide">
-					<%= image_tag asset_path('A.JPG') %>
+					<%= image_tag asset_path('A.JPG'), class:"img-zoom" %>
 				</div>
 				<div class="travel__texts">
 					<div class="travel__texts-inner">
@@ -58,7 +58,7 @@
 			</div>
 			<div class="travel__inner fadein">
 				<div class="travel__img cover-slide">
-					<img class="img-zoom" src="assets/R.JPG" alt="">
+					<%= image_tag asset_path('R.JPG'), class:"img-zoom" %>
 				</div>
 				<div class="travel__texts">
 					<div class="travel__texts-inner">
@@ -77,7 +77,7 @@
 			</div>
 			<div class="travel__inner fadein">
 				<div class="travel__img cover-slide">
-					<img class="img-zoom" src="assets/T.JPG" alt="">
+					<%= image_tag asset_path('T.JPG'), class:"img-zoom" %>
 				</div>
 				<div class="travel__texts">
 					<div class="travel__texts-inner">
