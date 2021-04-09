@@ -1,101 +1,107 @@
-<div class="row">
-	<div class="main-title">
-		<p class="text1"><b>旅の計画・振り返りができるアプリです。</b></p>
+<div id="sp-menu">
+	<div class="mobile-menu-title">@Travel_Diary_MENU</div>
+	<nav class="mobile-menu">
+		<ul class="mobile-menu__main">
+			<li class="mobile-menu__item"><%= link_to 'HOME', root_path,class:"mobile-menu__page" %></li>
+			<li class="mobile-menu__item"><%= link_to 'ABOUT', home_about_path, class:"mobile-menu__page" %></li>
+			<li class="mobile-menu__item"><%= link_to 'LOGIN', new_user_session_path, class:"mobile-menu__page" %></li>
+		</ul>
+	</nav>
+</div>
+<div class="main-visual">
+	<div id="hm-icon">
+      <a class="menu-trigger">
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+	<div class="main-visual__content">
+		<p class="main-visual__text">
+			TRAVEL TO 
+		</p>
+		<p class="main-visual__texts">
+			THE FUTURES
+		</p>
+		<p class="main-visual__sub-text left-to-right">
+    	〜 Let's go on the best trip 〜
+    </p>
 	</div>
-	<div class="col-xs-12">
-		<div class="main-visual">
-		<div class="main-visual-content">
-			<p class="main-visual-text">
-			TRAVEL TO THE FUTURES
-			</p>
-			<p class="main-visual-name">
-        	〜 Let's go on the best trip 〜
-      		</p>
-		</div>
-		</div>
+	<div class="hero__footer">
+		<img class="hero__downarrow" src="assets/arrow.svg">
+		<span class="hero__scrolltext">scroll</span>
 	</div>
 </div>
-<div class="row">
-	<div class="col-xs-12">
-		<div class="box7" style="background-color: #FFC0CB;">
-			<p class="text5"><b>〜機能紹介〜</b></p>
-		</div>
-	</div>
+<div class="colona">
+	<p class="colona__text">この困難を乗り越えて穏やかな日々が<br>戻ることを信じて頑張りましょう。</p>
 </div>
-
-<div class="container">
-	<div class="row">
-		<div class="col-xs-4">
-			<div class="box1">
-				<p class="boxy-title1">Step 1</p>
+<div id="main-content">
+	<main>
+		<section class="travel fadein">
+			<div class="travel__inner fadein">
+				<div class="travel__img cover-slide">
+					<img class="img-zoom" src="assets/A.JPG" alt="">
+				</div>
+				<div class="travel__texts">
+					<div class="travel__texts-inner">
+						<div class="travel__title main-title inview">
+							<span class="step">Step 1<br>自分だけのワクワクする旅を！</span>
+						</div>
+						<div class="travel__sub sub-title">An exciting trip of your own!</div>
+						<div class="travel__description">
+							<p><b>旅のイメージにタイトルをつけよう。</b><br>
+									テーマをつけると旅が待ち遠しくなります。</p><br>
+									<p><b>旅のテーマを表紙にしよう。</b><br>
+									好きな画像を表紙にして、自分だけのワクワクしおりのできあがり!</p>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="col-xs-8">
-			<div class="box1-title">
-				<h3 class="titles1"><b>Step 1：自分だけのワクワクする旅を！</b></h3>
-				<br>
-				<h4 style="padding-left:10px;">
-					<b>・旅のイメージにタイトルをつけよう。</b>
-				</h4>
-				<p style="padding-left:30px;">テーマをつけると旅が待ち遠しくなります。<br>（例）京都世界遺産巡りの旅、北海道の海の幸を食べ尽くす旅</p>
-				<h4 style="padding-left:10px;"><b>・旅のテーマを表紙にしよう。</b>
-				</h4>
-				<p style="padding-left:30px;">好きな画像を表紙にして、自分だけのワクワクしおりのできあが<br>り！</p>
+			<div class="travel__inner fadein">
+				<div class="travel__img cover-slide">
+					<img class="img-zoom" src="assets/R.JPG" alt="">
+				</div>
+				<div class="travel__texts">
+					<div class="travel__texts-inner">
+						<div class="travel__title main-title inview">
+							<span class="step">Step 2<br>計画を立てて楽しもう！</span>
+						</div>
+						<div class="travel__sub sub-title">Make a plan and have fun!</div>
+						<div class="travel__description">
+							<p><b>準備を整えて旅に出よう。</b><br>
+									持ち物チェック機能で忘れ物のない旅をしよう。<br>忘れがちなお土産もチェックしておこう。</p><br>
+									<p><b>スケジュール機能で時間管理もできる。</b><br>
+										限られた旅の時間を有効活用！<br>ついつい予定を詰め込みすぎて後悔、なんてこともありません。</p>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-xs-8">
-			<div class="box2-title">
-				<h3 class="titles2"><b>Step 2：計画を立てて楽しもう！</b>
-				</h3>
-				<br>
-				<h4 style="padding-left:20px;"><b>・準備を整えて旅に出よう。</b></h4>
-				<p style="padding-left:30px;">　持ち物チェック機能で忘れ物のない旅を！<br>　忘れがちなお土産もチェックしておこう！</p>
-				<h4 style="padding-left:20px;"><b>・スケジュール機能で時間管理もできる。</b>
-				</h4>
-				<p style="padding-left:30px;">　限られた旅の時間を有効活用！<br>　ついつい予定を詰め込みすぎて後悔、なんてこともありません。</p>
+			<div class="travel__inner fadein">
+				<div class="travel__img cover-slide">
+					<img class="img-zoom" src="assets/T.JPG" alt="">
+				</div>
+				<div class="travel__texts">
+					<div class="travel__texts-inner">
+						<div class="travel__title main-title inview">
+							<span class="step">Step 3<br>旅の思い出をシェアしよう！</span>
+						</div>
+						<div class="travel__sub sub-title">Share your travel memories!</div>
+						<div class="travel__description">
+							<p><b>最高の旅の思い出を投稿しよう</b><br>
+									投稿機能で旅の思い出をシェアできる
+					<br>いいねやコメントで思い出を共有できる</p><br>
+									<p><b>みんなと旅で繋がろう！</b><br>
+										みんなの旅の投稿にもいいねやコメントができる。<br>次の旅のヒントになるかも。</p>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="box2">
-				<p class="boxy-title2">Step 2</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-xs-4">
-			<div class="box3">
-				<p class="boxy-title3">Step 3</p>
-			</div>
-		</div>
-		<div class="col-xs-8">
-			<div class="box3-title">
-				<h3 class="titles3"><b>Step 3:旅の思い出をシェアしよう！</b>
-				</h3>
-				<br>
-				<h4 style="padding-left:20px;"><b>・最高の旅の思い出を投稿しよう</b>
-				</h4>
-				<p style="padding-left:45px;">投稿機能で旅の思い出をシェアできる
-					<br>いいねやコメントで思い出を共有できる</p>
-					<h4>
-						<b style="padding-left:20px;">・みんなと旅で繋がろう！</b>
-					</h4>
-					<p style="padding-left:45px;">みんなの旅の投稿にもいいねやコメントができる。<br>次の旅のヒントになるかも。</p>
-			</div>
-		</div>
-	</div>
+		</section>
+	</main>
 </div>
-
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="box6">
-				<p class="titles4"><b><a href="/users/sign_up", style="color: blue; border-bottom: 1px solid blue">
-          こちら</a>
+			<div class="top-signup">
+				<div class="top-signup__title"><a href="/users/sign_up">
+          <span class="top-signup__link">こちら</span></a>
           から新規登録を行ってください。
-        </p></b></p>
+        </div></p>
 			</div>
-		</div>
-	</div>
+	

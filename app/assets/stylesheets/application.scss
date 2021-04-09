@@ -1,60 +1,178 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "reset";
+@import "home";
+@import "comments";
+@import "maps";
+@import "preparations";
+@import "schedules";
+@import "shioris";
+@import "skippr";
+@import "souvenirs";
+@import "travels";
+@import "users";
+@import "breakpoints/base";
+@import 'modules/mixin';
 
+@media (min-width: 600px) {
+	@import "breakpoints/600up";
+}
+@media (min-width: 960px) {
+  @import "breakpoints/960up";
+}
+@media (min-width: 1280px) {
+  @import "breakpoints/1280up";
+}
 // 全体のレイアウト
-*{
-	margin:0;
-	padding:0;
+.header {
+	display: none;
 }
 
-.containers{
-	height:380px;
-	background-size: cover;
-	background-position: center;
-	width:80%;
-	margin-left:10%;
-	margin-top:50px;
-	border: 10px solid white;
-}
-.image-title{
-	font-family: 'Permanent Marker', cursive;
-	color:white;
-	font-size:110px;
-	margin-left:30%;
-	margin-top:125px;
-}
-.image1{
-background-image: image-url("holiday.jpg");
-}
-.image2{
-background-image: image-url("times.jpg");
-}
-.image3{
-background-image: image-url("pari.jpg");
-}
-.image4{
-background-image: image-url("Kyoto.jpg");
-}
-.image5{
-background-image: image-url("travel.jpg");
-}
 
-// ログイン・新規登録画面
+@media only screen and (max-width: 768px) {
+  // スマホの場合のcss
+	//ハンバーガーメニュー
+	#sp-menu {
+		width: 60%;
+		margin-left: 40%;
+	}
+	//homeのページ
+	.main-visual {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height: 800px;
+	
+	 &__content{
+		 padding-top: 65%;
+	 }
+	
+	 &__text{
+		 font-size:45px;
+		 margin-left: 5%;
+	 }
+	
+	 &__texts{
+		 font-size:45px;
+		 margin-left: 13%;
+	 }
+	
+	
+	 &__sub-text{
+		margin-top: 15px;
+		font-size:20px;
+		text-align: left;
+		margin-left:12%;
+	 }
+	}
+	.colona{
+		width: 70%;
+		margin-top: 25px;
+		border-radius: 5px;
+		&__text{
+			font-size: 12px;
+		}
+	 }
+	 .top-signup{
+		width: 80%;
+		margin-top: 25px;
+		border-radius: 5px;
+		&__text{
+			font-size: 10px;
+		}
+	 }
+	 //footer
+	.logo {
+			margin-bottom: 10px;
+			margin-top: 20px;
+		}
+	
+ 
+	.footer {
+		width: 100%;
+		padding: 5px 10px;
+		&__nav {
+			padding-top: 5px;
+			font-size: 15px;
+		}
+		&__li {
+			margin: 10px;
+		}
+		&__copyright {
+			padding-bottom: 5px;
+			padding-left: 8px;
+		}
+	}
+	.link {
+		color:black;
+		font-weight: bold;
+	}
+	.anding-video {
+		height: 800px;
+	}
+	.about {
+		&__logo {
+			width: 65px;
+			height: 30px;
+			margin-top: 10px;
+			margin-bottom:10px;
+		}
+		&__title {
+			font-size: 20px;
+			margin-bottom: 1%;
+		}
+	}
+	.login {
+		width: 90%;
+		&__title {
+			font-size: 20px;
+			margin-top: 0;
+		}
+	}
+
+	.form-group{
+		width: 100%;
+		padding-top: 15px;
+		& label{
+			font-weight: 600;
+			display: inline-block;
+			touch-action: manipulation;
+			font-size: 16px;
+		}
+	 }
+	 /* ボタン */
+	.action {
+		width: 70%;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		margin-left: 5%;
+	&__link {
+		margin-top: 15px;
+		font-size: 14px;
+		margin-left: 2%;
+		margin-bottom: 20px;
+	}
+	}
+	// .inview {
+	// 	display: none;
+	// }
+	.main-title {
+		font-size: 22px;
+	}
+	.sub-title {
+		font-size: 15px;
+	}
+	.travel__description {
+		font-size: 16px;
+	}
+	.sign__title {
+		font-size: 20px;
+	}
+	.sign__title p {
+		font-size: 15px;
+	}
+}
+	
+
 .head-title{
 	background: linear-gradient(transparent 50%, #a8eaff 50%);
 	padding: 5px 10px;
@@ -97,13 +215,7 @@ background-image: image-url("travel.jpg");
 	background-color: #FFBEDA;
 	font-size:20px;
 }
-//yield
-.wrapper{
- min-height: 100vh;
- position: relative;/*←相対位置*/
-    padding-bottom: 70px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
-}
+
 // ヘッダー・フッダー
 .title{
 	font-family: 'Teko', sans-serif;
@@ -122,22 +234,6 @@ background-image: image-url("travel.jpg");
 	color:navy;
 }
 
-header{
- 	margin-bottom: 30px;
-}
-.footer1{
- position: fixed;
-   bottom: 0;
-   padding: 30px 0;
-   height: 70px;
-   background-color:#EC8B5E;
- width: 100%;
-}
-.footer2{
- height: 100px;
- background-color:#E6FFE9;
- width: 100%;
-}
 .nav-item-name{
 	color:#696969;
 	padding-left:35%;
@@ -159,11 +255,3 @@ header{
 	font-family: 'Permanent Marker', cursive;
 	margin-left:15px;
 }
-.my-red {color:#EC8B5E; }
-.foot-title{
-	background-color:#E6FFE9;
-	color:#080A52;
-	margin-left:45%;
-}
-
-
