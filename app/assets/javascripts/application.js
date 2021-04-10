@@ -29,8 +29,8 @@ $(function() {
 
 $(function() {
   // 一旦hide()で隠してフェードインさせる
-  $('.main-visual__text').hide().fadeIn(3000);
-  $('.main-visual__texts').hide().fadeIn(5000);
+  $('.main-visual__text').hide().fadeIn(4000);
+  $('.main-visual__texts').hide().fadeIn(6000);
 });
 //テキストのフェードイン
 $(function(){
