@@ -38,9 +38,10 @@
 	}
 	//homeのページ
 	.main-visual {
-		height: 820px;
-		background-size: auto;
-
+		height: 0;
+		padding-top: 46%;
+		background-image: image-url("maldives.png") 0 0 no-repeat;
+		background-size: contain;
 
 	 &__content{
 		 padding-top: 30%;
