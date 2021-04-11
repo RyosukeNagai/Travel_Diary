@@ -1,39 +1,38 @@
+<div class="post__edit">
 <div class="container">
- <div class="row">
-  <div class="col-xs-8 col-xs-offset-2">
-   <h2 class="head-title5">〜 プロフィール編集 〜</h2>
-  </div>
- </div>
-</div>
- <div class="row">
-  <div class="col-xs-10 col-xs-offset-2">
-   <%= form_with(url:user_path, model:@user, method: :patch, local: true) do |f| %>
-    <div class="col-xs-2">
-         <%= attachment_image_tag @user, :user_image, :fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circle" %><br>
-     <%= f.attachment_field :user_image, class: "user_image" %>
-    </div>
-    <div class="user-name">
-        <div class="col-xs-2">
-      <%= f.label :name %>
-     </div>
-     <div class="user-name-nick">
-      <div class="col-xs-3">
-       <%= f.text_field :name, class: "name" %>
+  <div class="post__edit__title">Profile編集</div>
+  <%= form_with(url: user_path, model: @user, method: :patch, local: true) do |f| %>
+    <div class="row">
+      <div class="col-lg-3">
+        <p>画像のプレビュー</p>
+        <%= f.file_field :user_image, class: 'img_field', style: 'display:none;' %>
+        <%= attachment_image_tag(@user, :user_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev') %>
       </div>
-      <div class="col-xs-5">
-      <%= f.submit "変更を保存", class:"btn btn-success", style:"padding: 10px 30px;" %>
+      <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>ニックネーム</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :name, autocomplete: "off", class: "product-form" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-3">
+              <p>自己紹介</p>
+            </div>
+           <div class="col-lg-9" >
+             <%= f.text_area :introduce, autocomplete: "off",rows:"8",class: "product-introduction-form" %>
+           </div>
+          </div>
+        </div>
     </div>
-     </div>
-    </div><br>
-    <div class="introduce">     
-     <div class="col-xs-2">
-      <%= f.label :自己紹介 %>
-     </div>
-     <div class="col-xs-8">
-      <%= f.text_area :introduce, class: "introduction" %>
-     </div>     
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <%= f.submit "変更を保存", class:"btn btn-primary post__edit__btn" %>
+      </div>
     </div>
-   </div>
-  </div>
-     <% end %>
+  <% end %>
+</div>
 </div>

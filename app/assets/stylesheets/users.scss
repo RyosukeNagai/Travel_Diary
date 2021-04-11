@@ -1,7 +1,106 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//editページ
+.post__edit {
+	width: 800px;
+	margin: 0 auto;
+	padding-top: 30px;
+	background-color: #F5F5F5;
+	&__title {
+		width: 250px;
+		font-size: 30px;
+		font-weight: bold;
+		letter-spacing: 5px;
+		margin: 20px 0px;
+		background-color: #F5F5F5;
+		padding: 10px;
+		font-family: 'Itim', cursive;
+	}
+	&__btn {
+		margin-top: 20px;
+		width: 300px;
+		margin-left: 30%;
+	}
+}
+.post__edit p {
+	font-weight: 600;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+.product-form{
+	width: 63%;
+	height: 48px;
+	padding: 5px;
+	border-radius: 4px;
+	border: 1px solid #708090;
+	background: #fff;
+	line-height: 1.5;
+	font-size: 16px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.product-introduction-form {
+	width: 63%;
+	padding: 5px;
+}
+
 //showページ
+.mypage{
+	width: 90%;
+	margin: 0 auto;
+	&__profile{
+		width: 60%;
+		margin: 0 auto;
+		padding-top: 30px;
+		&__post {
+			font-size: 20px;
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		&__title {
+			font-size: 30px;
+			font-weight: bold;
+			padding-bottom: 10px;
+		}
+	}
+}
+.row {
+	margin-left: 0px;
+  margin-right: 0px;
+}
+.margin {
+	margin-top: 18px;
+}
+.margin-btn {
+	margin-right: 90%;
+	margin-top: 18px;
+}
+.margin b {
+	font-size: 18px;
+}
+.margin p {
+	font-size: 16px;
+	margin-top: 3px;
+}
+.mypage-post-index {
+	width: 90%;
+	margin: 0 auto;
+	margin-left: 8%;
+}
+.height {
+	width: 300px;
+	height: 170px;
+
+}
+.img-circle {
+	height: 180x;
+	width: 180px;
+	margin-left: 5%;
+	margin-bottom: 10px;
+}
+
 .user-name{
  margin-top:20px;
  height:30px;
@@ -33,4 +132,3 @@
 	margin-left:70px;
 	margin-bottom:10px;
 }
-

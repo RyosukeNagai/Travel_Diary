@@ -18,34 +18,27 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
         <% if user_signed_in? %>
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-4 col-xs-offset-5">
-                  <div class="nav-item-name">WellcoM!! <%= current_user.name %> ♪</div>
-                </div>
-              </div>
-            </div>
-           <ul class="nav navbar-nav"style="margin-left: 15%;"> 
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-3">
-                  <li class="nav-item"><%= link_to ' マイページ', user_path(current_user), class:"fas fa-child faa-float animated my-red" %></li>
-                </div>
-                <div class="col-xs-2">
-                  <li class="nav-item"><%= link_to ' 投稿一覧', travels_path, class:"fas fa-users faa-float animated my-red" %></li>
-                </div>
-                <div class="col-xs-2">
-                  <li class="nav-item"><%= link_to ' しおり', shioris_path, class:"fas fa-pencil-alt faa-float animated my-red" %></li>
-                </div>
-                <div class="col-xs-2">
-                  <li class="nav-item"><%= link_to ' map検索', maps_index_path,class:"fas fa-map-marker-alt faa-float animated my-red" %></li>
-                </div>
-                <div class="col-xs-3">
-                  <li class="nav-item"><%= link_to ' ログアウト', destroy_user_session_path,method: :delete, class:"fas fa-sign-out-alt faa-float animated my-red" %></li>
-                </div>
-              </div>
-            </div>
-          </ul>
+        <div class="header-hamburger">
+          <div id="hm-icon">
+            <a class="menu-trigger">
+              <span></span>
+              <span></span>
+            </a>
+          </div>
+          <div id="sp-menu">
+	          <div class="mobile-menu-title">@Travel_Diary_MENU</div>
+	            <nav class="mobile-menu">
+		            <ul class="mobile-menu__main">
+                  <li class="mobile-menu__item"><%= link_to 'Home', root_path,class:"mobile-menu__page" %></li>
+                  <li class="mobile-menu__item"><%= link_to 'MyPage', user_path(current_user),class:"mobile-menu__page" %></li>
+                  <li class="mobile-menu__item"><%= link_to '投稿一覧', travels_path,class:"mobile-menu__page" %></li>
+                  <li class="mobile-menu__item"><%= link_to 'しおり', shioris_path, class:"mobile-menu__page" %></li>
+                  <li class="mobile-menu__item"><%= link_to 'Map検索', maps_index_path, class:"mobile-menu__page" %></li>
+                  <li class="mobile-menu__item"><%= link_to 'LogOut', destroy_user_session_path,method: :delete, class:"mobile-menu__page" %></li>
+		            </ul>
+	            </nav>
+          </div>
+        </div>
         <% else %>
           <header class="header">
             <nav>

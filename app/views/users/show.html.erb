@@ -1,12 +1,39 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3">
-			<h2 class="head-title5">〜 マイページ 〜</h2>
+<div class="mypage">
+	<div class="mypage__profile">
+		<div class="col-lg-12">
+			<div class="mypage__profile__title">MyPage</div>
 		</div>
+		<div class="col-lg-4">
+			<%= attachment_image_tag @user, :user_image, :fill, 180, 180, fallback: "no_image.jpg",class: "img-circle" %>
+		</div>
+		<div class="col-lg-8 margin">
+			<b>ニックネーム</b> <p><%= @user.name %></p>
+		</div>
+		<div class="col-lg-8 margin">
+			<b>自己紹介</b> <p><%= @user.introduce %></p>
+		</div>
+		<% if @user == current_user %> 
+     	<div class="row">
+      	<%= link_to 'プロフィール編集', edit_user_path(@user), class: "col-xs-8 col-xs-offset-2 btn btn-default margin-btn" %>
+     	</div>
+    <% end %>
 	</div>
-	<%= render 'users/profile', user: @user %>
-	<div class="user-show">
-		<p><b>#過去に投稿したアイテム</b></p>
+</div>
+	<div class="mypage__profile__post">
+		<p><b>#Photos posted in the past</b></p>
 	</div>
-	<%= render 'travels/list', travels: @travels %>
+	<div class="mypage-post-index">
+		<div class="row">
+  		<% @travels.each do |travel| %>
+    		<div class="col-lg-4 height">
+     			<div class="each-image">
+      			<%= link_to (travel) do %>
+        			<%= attachment_image_tag travel, :travel_image, :fill, 300, 300, fallback: "travel-no-image-mini.jpg", size: "300x160" %>
+      			<% end %><br>
+     			</div> 
+    		</div>
+  		<% end %>
+ 		</div>
+	</div>
+
 
