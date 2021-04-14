@@ -24,9 +24,11 @@
           </div>
         </div>
         <div class="col-xs-8" style="">
-          <%= link_to (travel.user) do %>
-            <b><%= travel.user.name %></b>
+          <div class="travel__index__name">
+            <%= link_to (travel.user) do %>
+              <%= travel.user.name %>
           <% end %>
+          </div>
         </div>
         <div class="col-xs-12" style="">
           <div class="travel__index__image">
