@@ -1,78 +1,49 @@
+<div class="post__edit">
 <div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3">
-			<h2 class="head-title4">〜 投稿しよう♪ 〜</h2>
-		</div>
-	</div>
-
-	<%= form_for(@travel, url:travels_path) do |f| %>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-		<% if @travel.errors.any? %>
-    <div class="error">
-      <div class="error-message">
-      <h3><%= @travel.errors.count %>つのエラーメッセージ</h3>
-    </div>
-        <ul>
-          <% @travel.errors.full_messages.each do |message| %>
-          <div class="message2">
-              <li><%= message %></li>
-            </div>
-          <% end %>
-          </div>
-        </ul>
-      <% end %>
-    </div>
-    </div>
-
+  <div class="post__edit__title">New_Post</div>
+    <%= form_for(@travel, url:travels_path) do |f| %>
     <div class="row">
-  		<div class="col-xs-2 col-xs-offset-4">
-        <p class="travel-form">タイトル</p>
-    	</div>
-    	<div class="col-xs-6" style="margin-top:15px;">
-              <%= f.text_field :title %>
-          </div>
-    </div>
-    <br>
-    
-    <div class="row">
-    	<div class="col-xs-2 col-xs-offset-4">
-    		<p class="travel-form">ないよう</p>
-    	</div>
-    	<div class="col-xs-6" style="margin-top:5px;">
-    		<%= f.text_area :body ,style:"width:40%;"%>
-    	</div>
-    </div>
-    <br>
-
-    <div class="row">
-    	<div class="col-xs-3 col-xs-offset-3">
-    		<p class="travel-form2">旅行先住所</p>
-    	</div>
-    	<div class="col-xs-6" style="margin-top:10px;">
-    		<%= f.text_field :address ,style:"width:40%;"%>
-    	</div>
-    </div>
-    <br>
-
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-4">
-        <p class="travel-form">image</p>
+      <div class="col-lg-3">
+        <p>画像のプレビュー</p>
+        <%= f.file_field :travel_image, class: 'img_field', style: 'display:none;' %>
+        <%= attachment_image_tag @travel, :travel_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev' %>
       </div>
-    	<div class="col-xs-6">
-    <%= f.attachment_field :travel_image %>
-    	</div>
+      <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>タイトル</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :title, autocomplete: "off", class: "product-form" %>
+            </div>
+          </div>
+
+          <%# <div class="row">
+            <div class="col-lg-3">
+              <p>タグをつける</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :title, autocomplete: "off", class: "product-form" %>
+            <%# </div> %>
+          <%# </div> %>
+
+          <div class="row">
+            <div class="col-lg-3">
+              <p>内容</p>
+            </div>
+           <div class="col-lg-9" >
+             <%= f.text_area :body, autocomplete: "off",rows:"8",class: "product-introduction-form" %>
+           </div>
+          </div>
+        </div>
     </div>
-    <br>
-
     <div class="row">
-    	<div class="col-xs-2 col-xs-offset-5">
-    <%= f.submit "投稿する", class:"btn btn-primary active",style:"margin-left:40px;padding:10px 50px;"%>
-		</div>
-	</div>
-
-      <% end %>
+      <div class="col-lg-8 offset-lg-2">
+        <%= f.submit "投稿する", class:"btn btn-primary post__edit__btn" %>
+      </div>
+    </div>
+  <% end %>
 </div>
-
+</div>
 
 
