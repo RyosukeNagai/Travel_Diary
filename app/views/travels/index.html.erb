@@ -1,78 +1,65 @@
- <div class="row">
-  <div class="col-xs-12">
-    <div class="search" style="margin-left: 40%;">
-  <%= search_form_for @q do |f| %>
-      <b><%= f.label :title, "@タイトル検索　" %></b>
-      <%= f.search_field :title_cont %>
-      <%= f.submit "検索開始" %>
-  <% end %>
-
-</div>
-</div>
+<div class="travel">
+  <div class="search">
+    <%= search_form_for @q do |f| %>
+      <%# <b><%= f.label :title, "@タイトル検索　" %></b>
+      <%= f.search_field :title_cont,placeholder: "キーワード入力", class:"serch-form"%>
+      <%= f.submit "検索開始", class:"btn btn-info" %>
+      <a class="fas fa-plus-circle" href="/travels/new"></a>
+    <% end %>
   </div>
   <% @travels.each do |travel| %>
     <div class="row">
-      <div class="col-xs-12">
-        <div class="col-xs-4">
+      <div class="col-xs-4">
         <%= link_to (travel.user) do %>
-        <div class="user-imagess">
-          <%= attachment_image_tag travel.user,:user_image,:fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circle" %>
-              </div>
+          <div class="travel__index__image">
+            <%= attachment_image_tag travel.user,:user_image,:fill, 100, 100, fallback: "no_image.jpg",class: "img-responsive img-circles" %>
+          </div>
         <% end %>
         </div>
         <div class="col-xs-8">
-          <div class="traveler">
-          <%= link_to (travel) do %>
-              <b>#<%= travel.title %></b>
+          <div class="travel__index__title">
+            <%= link_to (travel) do %>
+              #<%= travel.title %>
             <% end %>
           </div>
         </div>
-        <div class="col-xs-12" style="margin-left: 27%;">
+        <div class="col-xs-8" style="">
           <%= link_to (travel.user) do %>
-                  <b><%= travel.user.name %></b>
-                <% end %>
-              </div>
-        <div class="col-xs-12">
-       <div class="users">
-          <%= link_to (travel) do %>
-        <%= attachment_image_tag travel,:travel_image,format:"jpg",fallback:"travel-no-image.jpg", class:"travel-image",style:"margin-left:15%;"%>
-      </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <div class="row">
-    <div class="col-xs-10">
-            <!-- いいね機能 -->
-            <div class="col-xs-6" style="text-align:right;">
-          <div id="favorites_buttons_<%= travel.id %>">
-             <%= render partial: 'favorites/favorite', locals: { travel: travel} %>
-            </div>
+            <b><%= travel.user.name %></b>
+          <% end %>
+        </div>
+        <div class="col-xs-12" style="">
+          <div class="travel__index__image">
+            <%= link_to (travel) do %>
+              <%= attachment_image_tag travel,:travel_image,format:"jpg",fallback:"travel-no-image.jpg", class:"",style:""%>
           </div>
-            <!-- いいね機能終わり -->
+        </div>
+            <% end %>
+      <!-- いいね機能 -->
+      <div class="col-xs-1" style="margin-left:10%;">
+        <div id="favorites_buttons_<%= travel.id %>">
+          <%= render partial: 'favorites/favorite', locals: { travel: travel} %>
+        </div>
+      </div>
+      <!-- いいね機能終わり -->
 
-            <!-- コメント -->
-            <div class="col-xs-3" style="text-align:right;">
-              <p class="comment-now"><b>コメント数：<%= link_to travel_path(travel),method: :get do %><%= travel.comments.count %><% end %>件</b></p>
-            </div>
-            <div class="col-xs-3" style="text-align:left;">
-              <%= link_to new_travel_comment_path(travel),method: :get do %><p class="comment-now"><b>コメントする</b></p><% end %>
-            </div>
+      <!-- コメント -->
+      <div class="col-xs-1" style="text-align:left;">
+        <%= link_to travel_path(travel),method: :get do %><p class="comment-now"><b><i class="far fa-comment"></i></b></p><% end %>
       </div>
+      <div class="col-xs-8" style="text-align:left;">
+        <p class="comment-now">コメント数：<%= link_to travel_path(travel),method: :get do %><%= travel.comments.count %><% end %>件</p>
+      </div>
+      <div class="col-xs-10" style="margin-left:10%;">
+        <div class="travel-body">
+          <%= travel.body %>
+        </div>
+      </div>
+  <% end %>
     </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="col-xs-6" style="text-align:right;">
-        <p style="font-size: 16px;"><b>内容</b></p>
-      </div>
-      <div class="col-xs-4">
-        <b><%= travel.body %></b>
-      </div>
-      </div>
-  </div>
-<% end %>
-  <div class="new-button">
-      <p class="button-title">新規投稿</p>
-      <a class="far fa-address-book faa-wrench fa-4x animated my-orange" href="/travels/new"></a>
-  </div>
+</div>
+  <%# <div class="new-button">
+    <p class="button-title">新規投稿</p>
+    <a class="far fa-address-book faa-wrench fa-4x animated my-orange" href="/travels/new"></a>
+  </div> %>
 

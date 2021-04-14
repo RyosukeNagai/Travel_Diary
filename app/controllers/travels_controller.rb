@@ -5,9 +5,10 @@ class TravelsController < ApplicationController
   end
 
   def show
-      @travel = Travel.find(params[:id])
-      @user = User.find(@travel.user_id)
-      @comments = Comment.all
+    @travel = Travel.find(params[:id])
+    @user = User.find(@travel.user_id)
+    @comments = @travel.comments
+    @comment = Comment.new
   end
 
   def new

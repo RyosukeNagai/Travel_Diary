@@ -5,11 +5,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-   travel = Travel.find(params[:travel_id])
-   comment = current_user.comments.new(comment_params)
-   comment.travel_id = travel.id
-   comment.save
-   redirect_to travel_path(travel)
+    travel = Travel.find(params[:travel_id])
+    comment = current_user.comments.new(comment_params)
+    comment.travel_id = travel.id
+    comment.save
+    redirect_to travel_path(travel)
   end
 
   def destroy

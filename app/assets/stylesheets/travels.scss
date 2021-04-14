@@ -28,8 +28,88 @@
 	font-size:20px;
 }
 //showページ
-.userr-image{
-	
+.img-circled {
+	height: 120px;
+	width: 120px;
+	margin-left: 50%;
+	border-radius: 50%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.travels {
+	width: 100%;
+  margin: 0 auto;
+	margin-top: 50px;
+}
+.travel__show__image {
+	margin-right: 25%;
+	text-align: center;
+}
+.travel__show__name {
+	margin-left: 48%;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.travel__show__titles {
+	font-family: 'Itim', cursive;
+	text-align: left;
+	margin-left: 12%;
+	font-size: 32px;
+	font-weight: 500;
+	margin-top: 80px;
+	margin-bottom: 5px;
+}
+.travel__show__address {
+	margin-top: 10px;
+	font-weight: 500;
+	margin-left: 17%;
+}
+.travel-image{
+	height: 500px;
+	width: 500px;
+	border: 10px solid #EEEEEE;
+	text-align:center;
+}
+.travel-edit-button {
+	margin-left: 85%;
+	margin-top: 10px;
+}
+.travel-destroy-button {
+	margin-left: 20%;
+	margin-top: 10px;
+}
+.push-btn {
+	font-size: 12px;
+	background-color: black;
+}
+.user-comments {
+	margin-left: 42%;
+}
+.travel-show-body {
+	margin-top: 10px;
+	font-weight: 600;
+	margin-left: 10%;
+}
+.travel-comments {
+	font-weight: 500;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.comment-form {
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.comment-button {
+	margin-left: 46%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.destroy-btn {
+	margin-right: 10%;
+	padding:5px;
+}
+.form-control {
 }
 .travelerr{
 	font-family: "Nico Moji";
@@ -64,12 +144,7 @@
 .commentts2{
 	font-family: "Nico Moji";
 }
-.travel-botann{
 
-}
-.travel-botann2{
-
-}
 .show-image{
 	text-align:center;
 	margin-top:5px;
@@ -102,13 +177,71 @@
 	font-size:16px;
 	font-family: "Nico Moji";
 }
-.travel-image{
-	height: 500px;
-	width: 700px;
-	border: 10px solid #EEEEEE;
-	text-aligin:center;
-}
+
 //indexページ
+.travel {
+	width: 90%;
+  margin: 0 auto;
+}
+.search {
+	width: 100%;
+	text-align: center;
+	padding-top: 25px;
+}
+.serch-form{
+	width: 30%;
+	height: 35px;
+	padding: 5px;
+	border-radius: 4px;
+	border: 1px solid #708090;
+	background: #fff;
+	line-height: 1.5;
+	font-size: 14px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.fa-plus-circle {
+	font-size: 60px;
+	margin-left: 2%;
+	position: fixed;
+	color: #90EE90;
+	z-index: 1;
+}
+.img-circles {
+	height: 120px;
+	width: 120px;
+	margin-left: 50%;
+	border-radius: 50%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.travel__index__title {
+	font-family: 'Itim', cursive;
+	text-align: left;
+	font-size: 25px;
+	font-weight: 500;
+	margin-top: 70px;
+	margin-bottom: 5px;
+}
+.travel__index__image {
+	margin-left: 10%;
+}
+.glyphicon {
+	font-size: 22px;
+	padding-top: 5px;
+}
+.fa-comment {
+	font-size: 20px;
+}
+.comment-now {
+	padding-top: 8px;
+}
+.travel-body {
+	padding-top: 10px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
 .travels{
 	font-size:14px;
 	font-family: "Nico Moji";
@@ -126,17 +259,7 @@
  border-bottom: 2px solid yellow;
  font-size:20px;
 }
-.users{
-	margin-left:13%;
-	margin-top:5px;
-}
-.traveler{
-	margin-top:60px;
-	font-size:38px;
-	font-family: "Nico Moji";
-	margin-left:160px;
-	color:brack;
-}
+
 .user-imagess{
 	margin-left:81%;
 	margin-top:27px;
@@ -167,4 +290,3 @@
 .error-message{
 	margin-left:25%;
 }
-
