@@ -2,12 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //newページ
-.head-title7{
-	background: linear-gradient(transparent 60%, #99FF99 40%);
-	padding: 5px 10px;
-	margin-left: 15%;
+#souvenirs {
+}
+.souvenir {
+	width: 100%;
+	margin: 0 auto;
+}
+.souvenir__title {
+	margin: 30px 0px;
 	text-align: center;
-	font-family: "Nico Moji";
+	font-family: 'Itim', cursive;
+	font-size: 25px;
+}
+.souvenir__total {
+	margin-left: 70%;
+	font-weight: 600;
+	font-size: 16px;
+	border-bottom: double 2px #F08080;
+	margin-top: 10px;
+}
+.souvenir__total__price {
+	font-weight: 600;
+	font-size: 16px;
+	margin-left: 10%;
+	border: solid #F0E68C; 
+	width: 150px;
+	padding: 5px;
+	padding-left: 50px;
+}
+.table > thead > tr > th {
+	padding: 0;
+}
+.table {
+	margin-top: 30px;
+}
+.souvenir__name {
+	font-weight: 600;
+	font-size: 16px;
+	margin-left: 70%;
+	padding-top: 0px;
+}
+.form{
+	width: 63%;
+	height: 48px;
+	padding: 5px;
+	border-radius: 4px;
+	border: 1px solid #708090;
+	background: #fff;
+	line-height: 1.5;
+	font-size: 16px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.souvenir__btn {
+	margin-left: 43%;
+	width: 150px;
 }
 .head-title8{
 	padding: 5px 10px;
