@@ -11,7 +11,7 @@ class SouvenirsController < ApplicationController
   	@souvenir = Souvenir.new(souvenir_params)
     @souvenir.shiori_id = @shiori.id
     @souvenir.save
-    redirect_to shiori_souvenirs_path(@shiori)
+    redirect_to shiori_path(@shiori)
   end
 
   def destroy
