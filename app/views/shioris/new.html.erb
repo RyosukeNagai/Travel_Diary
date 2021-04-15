@@ -1,64 +1,37 @@
+<div class="post__edit">
 <div class="container">
-	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
-			<h2 class="head-title12">〜 しおりを作成しよう♪ 〜</h2>
-		</div>
-	</div>
-
-	<%= form_for(@shiori, url:shioris_path) do |f| %>
+  <div class="post__edit__title">Creat_Shiori</div>
+    <%= form_for(@shiori, url:shioris_path) do |f| %>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-    <% if @shiori.errors.any? %>
-      <div class="error">
-        <div class="error-message">
-      <h3><%= @shiori.errors.count %>つのエラーメッセージ</h3>
-        </div>
-        <ul>
-          <% @shiori.errors.full_messages.each do |message| %>
-          <div class="message2">
-          <li><%= message %></li>
-        </div>
-    <% end %>
-     </div>
-        </ul>
-          <% end %>
-        </div>
+      <div class="col-lg-3">
+        <p>画像のプレビュー</p>
+        <%= f.file_field :shiori_image, class: 'img_field', style: 'display:none;' %>
+        <%= attachment_image_tag @travel, :travel_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev' %>
       </div>
-
-    <div class="row">
-  		<div class="col-xs-4 col-xs-offset-2">
-        <p class="travel-form" style="margin-left:33%;">しおりタイトル</p>
-    	</div>
-    	<div class="col-xs-6">
-              <%= f.text_field :title,placeholder:"例：ハワイに行きまーす！",style:"width:55%;margin-top:10px;" %>
+      <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>しおりタイトル</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :title, placeholder:"例：ハワイに行きまーす！",autocomplete: "off", class: "product-form" %>
+            </div>
           </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <p>メモ</p>
+            </div>
+           <div class="col-lg-9" >
+             <%= f.text_area :body, autocomplete: "off",rows:"8",class: "product-introduction-form",placeholder:"例： ◯月◯日出発予定〜。" %>
+           </div>
+          </div>
+        </div>
     </div>
-    <br>
-    
     <div class="row">
-    	<div class="col-xs-3 col-xs-offset-3">
-    		<p class="travel-form" style="margin-left:33%;">メモ</p>
-    	</div>
-    	<div class="col-xs-6">
-    		<%= f.text_area :body ,style:"width:55%;margin-top:10px;",placeholder:"例： ◯月◯日出発予定〜。"%>
-    	</div>
-    </div>
-    <br>
-
-    <div class="row">
-      <div class="col-xs-3 col-xs-offset-3">
-        <p class="travel-form" style="margin-left:20%;">image</p>
-      </div>
-      <div class="col-xs-6" style="margin-top:10px;">
-    <%= f.attachment_field :shiori_image %>
+      <div class="col-lg-8 offset-lg-2">
+        <%= f.submit "投稿する", class:"btn btn-primary post__edit__btn" %>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-5">
-    <%= f.submit "作成する", class:"btn btn-primary active",style:"margin-left:20px;padding:10px 50px;margin-top:15px;"%>
-    </div>
-  </div>
-
-      <% end %>
+  <% end %>
+</div>
 </div>

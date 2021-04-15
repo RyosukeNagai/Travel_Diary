@@ -7,6 +7,32 @@
 }
 
 //index ページ
+.shiori {
+	width: 100%;
+	margin: 0 auto;
+	&__title {
+		text-align: center;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		font-size: 22px;
+		font-weight: 600;
+	}
+}
+.fa-bookmark {
+	font-size: 50px;
+	margin-left: 70%;
+	position: fixed;
+	z-index: 1;
+	margin-top: 20px;
+	color: #F0E68C;
+}
+.shiori-title{
+	font-family: "Nico Moji";
+	font-size:16px;
+	margin-left:30%;
+	padding:10px 0;
+	color:#000033;
+}
 .head-title12{
 	background: linear-gradient(transparent 50%, #FFC7AF 50%);
 	padding: 5px 10px;
@@ -40,22 +66,6 @@
 	text-align: center;
 	font-family: "Nico Moji";
 }
-.each{
- width:100%;
- margin-top:20px;
-}
-.shioris-title{
-	font-family: "Nico Moji";
-	font-size:18px;
-	margin-left:20%;
-	padding:10px 0;
-	color:#000033;
-}
-
-.each-image{
- background-position:center;
- margin-bottom:25px;
-}
 
 //editページ
 .head-title7{
@@ -71,17 +81,71 @@
 	font-size:20px;
 }
 //showページ
-.shiori-title{
-	background: linear-gradient(transparent 70%, #00CC99 50%);
-	text-align: center;
-	font-size:30px;
-	font-family: "Nico Moji";
-	width:200px;
-	margin-top:15px;
+.shiori__show {
+	width: 100%;
+	margin: 0 auto;
+	&__title {
+		text-align: center;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		font-size: 22px;
+		font-weight: 600;
+	}
+	&__img {
+		margin: 0 auto;
+	}
+	&__day {
+		font-weight: 600;
+		font-family: 'Itim', cursive;
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+	&__days {
+		font-weight: 600;
+		font-size: 16px;
+		font-family: 'Itim', cursive;
+		margin-top: 2px;
+	}
+	&__name {
+		font-weight: 600;
+		font-size: 18px;
+		font-family: 'Itim', cursive;
+		margin-top: 5px;
+	}
+	&__names {
+		font-weight: 500;
+		margin-top: 2px;
+		margin-left: 2%;
+	}
+	&__memo {
+		font-weight: 600;
+		font-size: 18px;
+		font-family: 'Itim', cursive;
+		margin-top: 5px;
+	}
+	&__memos {
+		font-weight: 500;
+		margin-top: 2px;
+		margin-bottom: 10px;
+		margin-left: 2%;
+	}
+	&__edit {
+		margin-left: 80%;
+	}
+	&__destroy {
+		margin-left: 5%;
+	}
 }
+.shiori__show__mini__img {
+	width: 100px;
+	height: 100px;
+	margin-top: 5px;
+}
+.shiori-btn {
+}
+
 .shiori-image{
-	background-size: cover;
-	text-align:center;
+	margin-right: 0%;
 }
 .side-bar{
 	font-family: "Nico Moji";

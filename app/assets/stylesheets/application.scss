@@ -374,6 +374,96 @@
 	font-size: 10px;
 	margin-right: 0%;
 }
+.shiori {
+	&__title {
+		margin-top: 20px;
+		margin-bottom: 0px;
+		margin-right: 20%;
+		font-size: 25px;
+	}
+}
+.fa-bookmark {
+	font-size: 45px;
+	margin-left: 60%;
+	position: fixed;
+	z-index: 1;
+	margin-top: 20px;
+	color: #F0E68C;
+}
+.shiori-title{
+	font-family: "Nico Moji";
+	font-size:18px;
+	margin-left:25%;
+	color:#000033;
+	margin-top: 20px;
+}
+.each-image{
+	margin-left: 8%;
+}
+.shiori__show {
+	&__title {
+		margin-top: 30px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		margin-right: 50%;
+	}
+	&__img {
+		margin: 0 auto;
+	}
+	&__day {
+		font-size: 14px;
+		margin-bottom: 0px;
+	}
+	&__days {
+		font-size: 14px;
+		margin-top: 2px;
+		margin-left: 15%;
+	}
+	&__name {
+		font-size: 18px;
+		margin-top: 5px;
+		margin-left: 15%;
+	}
+	&__names {
+		font-weight: 500;
+		margin-top: 2px;
+		margin-left: 19%;
+		font-size: 12px;
+	}
+	&__memo {
+		font-weight: 600;
+		font-size: 18px;
+		margin-top: 5px;
+		margin-left: 16%;
+	}
+	&__memos {
+		margin-top: 2px;
+		margin-bottom: 10px;
+		margin-left: 19%;
+		font-size: 12px;
+	}
+	&__edit {
+		margin-left: 40%;
+		margin-top: 10px;
+	}
+	&__destroy {
+		margin-left: 10%;
+		margin-top: 10px;
+	}
+}
+.shiori__show__mini__img {
+	width: 90px;
+	height: 90px;
+	margin-top: 5px;
+}
+.shiori-btn {
+	font-size: 10px;
+	padding: 5px;
+}
+
+.shiori-image{
+	margin-right: 0%;
+}
 }
 	
 

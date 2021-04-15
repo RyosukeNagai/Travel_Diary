@@ -1,11 +1,24 @@
-<div class="container">
-  <div class="row">
-  <div class="col-xs-4 col-xs-offset-3">
-    <div class="shiori-title">
-      <b>#<%= @shiori.title %></b>
+<div class="shiori__show">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="shiori__show__title">
+          #<%= @shiori.title %>
+        </div>
+      </div>
+      <div class="col-xs-2">
+      <div class="shiori__show__day">
+        Create_Days
+      </div>
+    </div>
+    <div class="col-xs-10">
+      <div class="shiori__show__days">
+        <%= @shiori.created_at.strftime('%Y/%m/%d') %>
+      </div>
     </div>
     </div>
-    <div class="col-xs-5">
+  </div>
+    <%# <div class="col-xs-5">
       <div class="side-bar"><b>★旅行の準備をしよう!!</b></div>
         <div class="btn-group" style="margin-bottom: 10px;">
           <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -14,87 +27,63 @@
           </button>
             <ul class="dropdown-menu" role="menu">
               <li role="presentation"><%= link_to 'お土産ページ',shiori_souvenirs_path(@shiori)%></li>
-              <li role="presentation"><%= link_to '準備ページ',shiori_preparations_path(@shiori)%></li>
-              <li role="presentation"><%= link_to 'スケジュールページ',shiori_schedules_path(@shiori)%></li>
-            </ul>
-        </div>
-    </div>
-  </div>
-</div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="col-xs-9 col-xs-offset-2">
-        <div class="shiori-image">
-          <%= attachment_image_tag @shiori,:shiori_image,:fill,700,450,
-                  fallback:"shiori-no-image.jpg",size:"700x450"  %>
-        </div>
-      </div>
-    </div>
-    </div>
-
-  <div class="col-xs-5">
+              <%# <li role="presentation"><%= link_to '準備ページ',shiori_preparations_path(@shiori)%></li>
+              <%# <li role="presentation"><%= link_to 'スケジュールページ',shiori_schedules_path(@shiori)%></li>
+            <%# </ul> %>
+        <%# </div> %>
+    <%# </div> %>
+  <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="shioris-image">
-          <%= attachment_image_tag @user,:user_image,:fill, 100, 100, fallback: "no_image.jpg", size: "100x100",class: "img-responsive img-circle" %>
+        <div class="shiori__show__img">
+          <%= attachment_image_tag @shiori,:shiori_image,:fill,350,350,
+                  fallback:"shiori-no-image.jpg",size:"350x350"  %>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-xs-7">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="col-xs-4" style="margin-top: 10px;">
-          <b>しおり作成者</b>
-        </div>
-      <div class="col-xs-4" style="margin-top: 10px;">
-        <b>＊<%= @user.name %></b>
-      </div>
-      </div>
-
-      <div class="col-xs-12">
-        <div class="col-xs-4" style="margin-top: 5px;">
-          <div class="user-table">
-            <b>しおり作成日</b>
-          </div>
-        </div>
-      <div class="hoge">
-        <div class="col-xs-4" style="margin-top: 5px;">
-          <p><%= @shiori.created_at.strftime('%Y/%m/%d') %></p>
-        </div>
-      </div>
-      </div>
-    <div class="col-xs-12">
-      <div class="col-xs-4" style="margin-top: 5px;">
-        <div class="user-table">
-          <p>✏︎メモ</p>
-        </div>
-      </div>
-      <div class="col-xs-4" style="margin-top: 5px;">
-        <div class="hoge">
-          <b><%= @shiori.body %></b>
-        </div>
+    <div class="col-xs-2">
+      <div class="shiori__show__mini__img">
+        <%= attachment_image_tag @user,:user_image,:fill, 100, 100, fallback: "no_image.jpg", size: "100x100",class: "img-responsive img-circle" %>
       </div>
     </div>
-  </div>
+
+    <div class="col-xs-10">
+      <div class="shiori__show__name">
+        User_Name
+      </div>
+    </div>
+    <div class="col-xs-10">
+      <div class="shiori__show__names">
+        <%= @user.name %>
+      </div>
+    </div>
+
+    <div class="col-xs-10">
+      <div class="shiori__show__memo">
+        Memo_✏︎
+      </div>
+    </div>
+    <div class="col-xs-10">
+      <div class="shiori__show__memos">
+        <%= @shiori.body %>
+      </div>
+    </div>
+
+
+    <div class="col-xs-6" style="">
+      <div class="shiori__show__edit">
+        <%= link_to 'しおりを編集', edit_shiori_path(@shiori), class: "btn btn-success shiori-btn" %>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="shiori__show__destroy">
+        <%= link_to "しおりを削除する",shiori_path(@shiori), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},
+                  class: "btn btn-danger shiori-btn" %>
+      </div>
+    </div>
 </div>
 
+  <%# <%= render partial: 'shioris/souvenirs' %>
 
-  <div class="row">
-    <div class="col-xs-7 col-xs-offset-4">
-      <div class="user-table">
-        <div class="col-xs-2" style="margin-left: 90px;">
-          <%= link_to 'しおりを編集', edit_shiori_path(@shiori), class: "btn btn-success" %>
-        </div>
-      <div class="col-xs-2">
-        <div class="destroy">
-          <%= link_to "しおりを削除する",shiori_path(@shiori), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},
-                  class: "btn btn-danger" %>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-
+  

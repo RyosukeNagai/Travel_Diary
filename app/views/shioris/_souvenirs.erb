@@ -1,0 +1,99 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<h2 class="head-title7"><b>〜 ＊お土産リスト 〜</b></h2>
+		</div>
+	</div>
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div>
+      <% @sum = 0 %>
+      <% @souvenirs.each do |souvenir| %>
+      <% @sum += souvenir.count.to_i * souvenir.price.to_i * 1.10 %>
+      <% end %>
+      <div class="col-xs-6">
+        <div class="total">
+        <b>合計金額(税込)</b>
+      </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="total-price">
+      <b><%= @sum.to_i %>円</b>
+    </div>
+    </div>
+      <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>商品名</th>
+                <th>個数</th>
+                <th>価格(税抜き)</th>
+                <th></th>
+            </tr>
+        </thead>
+      <tbody>
+        <% @souvenirs.each do |souvenir| %>
+            <tr>
+                <td><%= souvenir.name %></td>
+                <td><%= souvenir.count%></td>
+                <td><%= souvenir.price %>円</td>
+                <td><%= link_to "削除する",shiori_souvenir_path(@shiori,souvenir),
+              method: :delete, data: {confirm:"本当に削除してよろしいですか？"},class:"btn btn-danger" %></td>
+            </tr>
+        <% end %>
+      </div>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+	<%= form_for [@shiori, @souvenir] do |f| %>
+		<% if @souvenir.errors.any? %>
+      <h3><%= @souvenir.errors.count %>eroor</h3>
+        <ul>
+          <% @souvenir.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h2 class="head-title8"><b>〜 お土産の入力 〜</b></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-4">
+      <b class="travel-form4">商品名</b>
+    </div>
+    <div class="col-xs-6">
+      <%= f.text_field :name,style:"width:50%;", placeholder:"例：東京ばな奈"%>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-4">
+    	<b class="travel-form4">個数</b>
+    </div>
+    <div class="col-xs-6">
+    	<%= f.text_area :count ,style:"width:50%;", placeholder:"※半角で入力して下さい"%><b> 個</b>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-xs-5 col-xs-offset-1">
+      <div class="travel-form3">
+    		<b>単価（税抜き）</b>
+      </div>
+    </div>
+    <div class="col-xs-6">
+    	<%= f.text_field :price ,style:"width:50%;", placeholder:"※半角で入力して下さい"%><b> 円</b>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-5">
+      <%= f.submit "投稿する", class:"btn btn-primary active",style:"margin-left:20px;padding:10px 50px;"%>
+    </div>
+  </div>
+    <% end %>
+</div>

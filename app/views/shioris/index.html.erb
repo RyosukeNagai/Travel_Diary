@@ -1,14 +1,9 @@
-<div class="each">
+<div class="shiori">
 	<div class="container">
-		<div class="row" style="margin-left: 25%;">
-			<div class="col-xs-7">
-				<h2 class="head-title6">〜 旅のしおり 〜</h2>
-			</div>
-			<div class="col-xs-5">
-				<div class="new-button2">
-					<p class="button-title">しおりの作成</p>
-				<a class="far fa-address-book faa-wrench fa-5x animated my-orange" href="/shioris/new"></a>
-				</div>
+		<div class="row" style="">
+			<div class="col-xs-12">
+				<a class="fas fa-bookmark" href="/shioris/new"></a>
+				<div class="shiori__title">旅のしおり</div>
 			</div>
 		</div>
 	</div>
@@ -16,21 +11,21 @@
 <div class="container">
 	<div class="row">
 		<% @myshioris.each do |myshiori| %>
-			<div class="col-xs-4">
+			<div class="col-lg-4">
 				<%= link_to (myshiori) do %>
-				<div class="shioris-title">
+				<div class="shiori-title">
 				<b>＃<%= myshiori.title %></b>
 				</div>
 			<div class="col-xs-10 col-xs-offset-1">
     		</div>
 				<div class="each-image">
-					<%= attachment_image_tag myshiori, :shiori_image, :fill, 240, 240, fallback: "shiori-no-image.jpg", size: "240x240" %>
+					<%= attachment_image_tag myshiori, :shiori_image,fallback: "shiori-no-image.jpg" %>
 				</div>
 				<% end %>
-    		<div class="col-xs-12">
+    		<div class="col-xs-12" style="margin-top: 0px;">
       			<b>・<%= myshiori.body %></b>
     		</div>
-    		<div class="col-xs-5">
+    		<div class="col-xs-6">
      			<b>・作成日</b>
     		</div>
     		<div class="col-xs-6">

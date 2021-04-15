@@ -1,53 +1,38 @@
+<div class="post__edit">
 <div class="container">
-	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
-			<h2 class="head-title7">〜 しおりを編集しよう♪ 〜</h2>
-		</div>
-	</div>
-	<%= form_for(@shiori) do |f| %>
-		<% if @shiori.errors.any? %>
-      <h3><%= @shiori.errors.count %>eroor</h3>
-        <ul>
-          <% @shiori.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
+  <div class="post__edit__title">Shiori_Edit</div>
+  <%= form_with(url: shiori_path, model: @shiori, method: :patch, local: true) do |f| %>
     <div class="row">
-  		<div class="col-xs-4 col-xs-offset-2">
-        <p class="travel-form" style="margin-left:33%;">しおりタイトル</p>
-    	</div>
-    	<div class="col-xs-6">
-              <%= f.text_field :title ,style:"margin-top:10px;"%>
+      <div class="col-lg-3">
+        <p>画像のプレビュー</p>
+        <%= f.file_field :shiori_image, class: 'img_field', style: 'display:none;' %>
+        <%= attachment_image_tag(@user, :user_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev') %>
+      </div>
+      <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Title</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :title, autocomplete: "off", class: "product-form" %>
+            </div>
           </div>
-    </div>
-    <br>
-    
-    <div class="row">
-    	<div class="col-xs-4 col-xs-offset-2">
-    		<p class="travel-forms">メモ</p>
-    	</div>
-    	<div class="col-xs-6">
-    		<%= f.text_area :body ,style:"width:40%;"%>
-    	</div>
-    </div>
-    <br>
 
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Memo</p>
+            </div>
+           <div class="col-lg-9" >
+             <%= f.text_area :body, autocomplete: "off",rows:"8",class: "product-introduction-form" %>
+           </div>
+          </div>
+        </div>
+    </div>
     <div class="row">
-      <div class="col-xs-4 col-xs-offset-2">
-        <p class="travel-forms">image</p>
-      </div>
-      <div class="col-xs-6">
-    <%= f.attachment_field :shiori_image ,style:"margin-top:10px;"%>
+      <div class="col-lg-8 offset-lg-2">
+        <%= f.submit "変更を保存", class:"btn btn-primary post__edit__btn" %>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-5">
-    <%= f.submit "完了", class:"btn btn-success active",style:"margin-left:15px;padding:10px 50px;margin-top:20px;"%>
-    </div>
-  </div>
-
-      <% end %>
+  <% end %>
+</div>
 </div>
