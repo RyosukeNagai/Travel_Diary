@@ -1,63 +1,47 @@
+<div class="post__edit">
 <div class="container">
- <div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-   <h2 class="head-title5">〜 編集ページ 〜</h2>
-  </div>
- </div>
-
- <%= form_for(@travel) do |f| %>
-
-  <% if @travel.errors.any? %>
-      <h3><%= @travel.errors.count %>eroor</h3>
-        <ul>
-          <% @travel.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
+  <div class="post__edit__title">Shiori_Edit</div>
+  <%= form_with(url: travel_path, model: @travel, method: :patch, local: true) do |f| %>
     <div class="row">
-    <div class="col-xs-2 col-xs-offset-4">
-        <p class="travel-form">Title</p>
-     </div>
-     <div class="col-xs-6">
-              <%= f.text_field :title %>
+      <div class="col-lg-3">
+        <p>画像のプレビュー</p>
+        <%= f.file_field :travel_image, class: 'img_field', style: 'display:none;' %>
+        <%= attachment_image_tag(@user, :user_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev') %>
+      </div>
+      <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Title</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :title, autocomplete: "off", class: "product-form" %>
+            </div>
           </div>
-    </div>
-    <br>
-    
-    <div class="row">
-     <div class="col-xs-2 col-xs-offset-4">
-      <p class="travel-form">本文</p>
-     </div>
-     <div class="col-xs-6">
-      <%= f.text_area :body ,style:"width:40%;"%>
-     </div>
-    </div>
-    <br>
 
-    <div class="row">
-     <div class="col-xs-3 col-xs-offset-3">
-      <p class="travel-form">旅行先の住所</p>
-     </div>
-     <div class="col-xs-6">
-      <%= f.text_field :address ,style:"width:40%;"%>
-     </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Address</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :address, autocomplete: "off", class: "product-form" %>
+            </div>
+          </div>          
+
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Contents</p>
+            </div>
+           <div class="col-lg-9" >
+             <%= f.text_area :body, autocomplete: "off",rows:"8",class: "product-introduction-form" %>
+           </div>
+          </div>
+        </div>
     </div>
-    <br>
-
     <div class="row">
-     <div class="col-xs-1 col-xs-offset-5">
-    <%= f.attachment_field :travel_image %>
-     </div>
+      <div class="col-lg-8 offset-lg-2">
+        <%= f.submit "変更を保存", class:"btn btn-primary post__edit__btn" %>
+      </div>
     </div>
-    <br>
-
-    <div class="row">
-     <div class="col-xs-2 col-xs-offset-5">
-    <%= f.submit "Update", class:"btn btn-success",style:"margin-left:40px;padding:10px 50px;"%>
-  </div>
- </div>
-
-      <% end %>
+  <% end %>
+</div>
 </div>

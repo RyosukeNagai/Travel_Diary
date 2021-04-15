@@ -11,12 +11,24 @@
       <div class="col-lg-7 offset-lg-1">
           <div class="row">
             <div class="col-lg-3">
-              <p>タイトル</p>
+              <p>Title</p>
             </div>
             <div class="col-lg-9">
               <%= f.text_field :title, autocomplete: "off", class: "product-form" %>
             </div>
           </div>
+        </div>
+
+        <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Address</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.text_field :address, autocomplete: "off", class: "product-form" %>
+            </div>
+          </div>
+        </div>
 
           <%# <div class="row">
             <div class="col-lg-3">
@@ -27,9 +39,10 @@
             <%# </div> %>
           <%# </div> %>
 
+        <div class="col-lg-7 offset-lg-1">
           <div class="row">
             <div class="col-lg-3">
-              <p>内容</p>
+              <p>Contents</p>
             </div>
            <div class="col-lg-9" >
              <%= f.text_area :body, autocomplete: "off",rows:"8",class: "product-introduction-form" %>
