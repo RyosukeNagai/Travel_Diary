@@ -26,7 +26,7 @@
 		<div class="row">
   		<% @travels.each do |travel| %>
     		<div class="col-lg-4 height">
-     			<div class="each-image">
+     			<div class="each-images">
       			<%= link_to (travel) do %>
         			<%= attachment_image_tag travel, :travel_image, :fill, 300, 300, fallback: "travel-no-image-mini.jpg", size: "300x160" %>
       			<% end %><br>
