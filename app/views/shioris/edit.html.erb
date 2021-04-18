@@ -6,7 +6,7 @@
       <div class="col-lg-3">
         <p>画像のプレビュー</p>
         <%= f.file_field :shiori_image, class: 'img_field', style: 'display:none;' %>
-        <%= attachment_image_tag(@user, :user_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev') %>
+        <%= attachment_image_tag(@shiori, :shiori_image,fallback: 'no_image.jpg', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev') %>
       </div>
       <div class="col-lg-7 offset-lg-1">
           <div class="row">
