@@ -75,3 +75,13 @@ $(function () {
     readURL(this);
   });
 });
+
+//link idへのスクロール
+$(function(){
+	$('a[href^="#"]').click(function(){
+		var target = $($(this).attr('href')).offset().top;
+		target -= -140;
+		$('html, body').animate({scrollTop: target}, 1000);
+		return false;
+	});
+});
