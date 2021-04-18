@@ -45,7 +45,7 @@
               <td><%= souvenir.price %>円</td>
               <div class="souvenir__destroy__btn">
                 <td><%= link_to "削除する",shiori_souvenir_path(@shiori,souvenir),
-              method: :delete, data: {confirm:"本当に削除してよろしいですか？"},class:"btn btn-danger souvenir__destroy__btn" %></td>
+              method: :delete, data: {confirm:"本当に削除してよろしいですか？"},class:"btn btn-danger souvenir__destroy__btn shiori-btns" %></td>
               </div>
             </tr>
         <% end %>

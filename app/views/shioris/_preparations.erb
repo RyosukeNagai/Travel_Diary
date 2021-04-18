@@ -1,0 +1,82 @@
+<div class="preparation">
+  <div class="container">
+	  <div class="row">
+		  <div class="col-xs-12">
+			  <div class="preparation__title">
+          ②Preparation_List
+        </div>
+		  </div>
+	  </div>
+  </div>
+  <div class="container">
+    <% @preparations.each do |preparation| %>
+      <%= form_for(preparation,url:shiori_preparation_path(@shiori,preparation)) do |form| %>
+        <div class="col-xs-5">
+          <div class="preparation__name">
+            #<%= preparation.name %>
+          </div>
+        </div>
+        <div class="col-xs-1">
+          <div class="preparation__box">
+            <%= form.check_box :is_active, checked: preparation.is_active %>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="preparation__check">
+            <%= form.submit "チェックの保存", class:"btn btn-info preparation-btn",style:""%>
+          </div>
+      <% end %>
+        </div>
+        <%# <div class="col-xs-2">
+          <div class="preparation__edit">
+            <%= link_to "編集",edit_shiori_preparation_path(@shiori.id,preparation),class:"btn btn-warning preparation-btn",style:""%>
+          <%# </div> %>
+        <%# </div> %>
+        <div class="col-xs-2">
+          <div class="preparation__destroy">
+            <%= link_to "削除",shiori_preparation_path(@shiori,preparation),method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class:"btn btn-danger preparation-btn",style:""%>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="container">
+	  <%= form_for [@shiori, @preparation] do |f| %>
+		  <% if @preparation.errors.any? %>
+        <h3><%= @preparation.errors.count %>eroor</h3>
+          <ul>
+            <% @preparation.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+    <% end %>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="preparation__title__sub">
+          ↓ 準備物を記入しよう ↓
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="preparation__object">
+          持っていく物
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="preparation-form">
+          <%= f.text_field :name, placeholder:"例：パスポート",style:"",class:"preparation-forms" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.submit "登録", class:"btn btn-primary preparation__btn",style:""%>
+      </div>
+    </div>
+  <% end %>

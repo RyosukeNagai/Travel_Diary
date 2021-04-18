@@ -10,6 +10,8 @@ class ShiorisController < ApplicationController
     @user = User.find(@shiori.user_id)
     @souvenir = Souvenir.new
     @souvenirs = Souvenir.where(shiori_id: @shiori.id)
+    @preparation = Preparation.new
+    @preparations = Preparation.where(shiori_id: @shiori.id)
   end
 
   def new

@@ -11,7 +11,7 @@ class PreparationsController < ApplicationController
     @preparation = Preparation.new(preparation_params)
     @preparation.shiori_id = @shiori.id
     @preparation.save
-    redirect_to shiori_preparations_path(@shiori)
+    redirect_to shiori_path(@shiori)
   end
 
   def edit
@@ -23,7 +23,7 @@ class PreparationsController < ApplicationController
     @shiori = Shiori.find(params[:shiori_id])
     @preparation = Preparation.find(params[:id])
     if @preparation.update(preparation_params)
-      redirect_to shiori_preparations_path(@shiori)
+      redirect_to shiori_path(@shiori)
     else
       render "edit"
     end

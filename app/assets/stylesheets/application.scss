@@ -516,11 +516,69 @@
 	padding: 5px;
 	font-size: 12px;
 	box-sizing: border-box;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 .souvenir__btn {
 	margin-left: 25%;
 	width: 150px;
+}
+.btn-primary {
+	margin-bottom: 0px;
+	height:35px;
+}
+#preparations {
+}
+.preparation {
+	width: 100%;
+	margin: 0 auto;
+	&__title {
+		margin-top: 30px;
+		margin-bottom: 15px;
+		font-size: 20px;	
+	}
+	&__name {
+		margin-left: 0%;
+		font-size: 12px;
+	}
+	&__box {
+		margin-right: 100%;
+		margin-top: 0px;
+	}
+	&__check {
+		margin-bottom: 10px;
+	}
+	&__edit {
+		margin-bottom: 5px;
+	}
+	&__destroy{
+		margin-bottom: 10px;
+	}
+	&__object {
+		margin-left: 20%;
+		font-size: 16px;
+		margin-top: 15px;
+	}
+}
+.preparation-btn {
+	font-size: 10px;
+	padding: 2px;
+}
+
+.preparation-form{
+	font-size:16px;
+	margin-top:10px;
+}
+.preparation-forms {
+	padding: 5px;
+	width: 150px;
+}
+.preparation__btn {
+	margin-left: 25%;
+	width: 150px;
+}
+.shiori-btns {
+	font-size: 10px;
+	padding: 2px;
 }
 }
 	

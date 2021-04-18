@@ -1,43 +1,69 @@
 // Place all the styles related to the preparations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#preparations {
+}
+.preparation {
+	width: 100%;
+	margin: 0 auto;
+	&__title {
+		margin-top: 50px;
+		margin-bottom: 20px;
+		text-align: center;
+		font-family: 'Itim', cursive;
+		font-size: 25px;	
+	}
+	&__name {
+		margin-left: 50%;
+		font-family: 'Itim', cursive;
+		font-size: 16px;
+		font-weight: 600;
+		margin-top: 5px;
+	}
+	&__box {
+		margin-top: 5px;
+	}
+	&__check {
+		margin-bottom: 10px;
+	}
+	&__edit {
 
-.head-title9{
-	padding: 5px 10px;
-	margin-left: 15%;
+	}
+	&__destroy{
+
+	}
+	&__object {
+		font-weight: 600;
+		margin-left: 75%;
+		font-size: 16px;
+		margin-top: 15px;
+	}
+}
+
+.preparation__title__sub {
+	font-family: 'Itim', cursive;
+	font-size: 16px;	
 	text-align: center;
-	font-family: "Nico Moji";
-	font-size:20px;
-	border-bottom: double 2px #87CEFA;
 }
 .new-preparation{
-	font-family: "Nico Moji";
-	font-size:23px;
-	margin-top:10px;
+	font-family: 'Itim', cursive;
+	font-size:16px;
 }
-.preparation-title{
-	font-family: "Nico Moji";
-	font-size:20px;
-	text-align: right;
+.preparation-btn {
+	// font-size: 10px;
+	// padding: 5px;
+	padding: 5px;
 }
-.preparation-title2{
-	font-family: "Nico Moji";
-	text-align: right;
-	font-size:20px;
-	margin-top:10px;
-}
+
 .preparation-form{
-	font-size:20px;
+	font-size:16px;
 	margin-top:10px;
 }
-.field{
-  text-align: right;
-  font-size:20px;
-  margin-top:15px;
+.preparation-forms {
+	padding: 5px;
 }
-.back-botan2{
-	margin-top:30px;
-	font-family: 'Permanent Marker', cursive;
-	font-size:30px;
-	margin-left:49%;
+.preparation__btn {
+	margin-left: 43%;
+	width: 150px;
+	margin-top: 15px;
 }
