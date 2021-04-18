@@ -22,7 +22,7 @@ class SchedulesController < ApplicationController
     @shiori = Shiori.find(params[:shiori_id])
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
-      redirect_to shiori_schedules_path(@shiori)
+      redirect_to shiori_path(@shiori)
     else
       render "edit"
     end

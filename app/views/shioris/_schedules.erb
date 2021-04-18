@@ -1,0 +1,133 @@
+<div class="schedule">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="schedule__title">
+          ①Schedule_List
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <% @schedules.each do |schedule| %>
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="schedule__year-title">
+            <%= schedule.year %>
+          </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <div class="schedule__month-title">
+          <%= schedule.month %> /<%= schedule.day %>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="schedule__time-title">
+          <%= schedule.time %>:00
+        </div>
+      </div>
+      <div class="col-xs-7">
+        <div class="schedule__plan-title">
+          <%= schedule.plan %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="col-xs-6">
+            <div class="schedule__edit">
+              <%= link_to "編集する",edit_shiori_schedule_path(@shiori.id,schedule),class:"btn btn-warning schedule-btn",style:"" %>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="schedule__destroy" style="">
+              <%= link_to "削除する",shiori_schedule_path(@shiori,schedule),method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class:"btn btn-danger schedule-btn",style:""%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+  <div class="col-xs-12">
+    <%= form_for [@shiori, @schedule] do |f| %>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="schedule__sub-title">
+            〜 スケジュール入力 〜
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="schedule__year">①_year</div>
+      </div>
+      <div class="col-xs-6">
+        <div class="schedule__year-form">
+          <%= f.select :year, (2020..2050), include_blank:"例：20◯◯",class:"" %>
+        </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="schedule__year">
+          ②_month
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="schedule__year-form">
+          <%= f.select :month, (1..12), include_blank: "例：◯月",class:"" %>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-6">
+      <b class="schedule__year">③_day</b>
+      </div>
+      <div class="col-xs-6">
+        <div class="schedule__year-form">
+          <%= f.select :day, (1..31), include_blank: "例：◯日",class:"" %>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <b class="schedule__year">④_time</b>
+      </div>
+      <div class="col-xs-6">
+        <div class="schedule__year-form">
+          <%= f.select :time, (0..24), include_blank:"例：9:00~",class:"" %>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <b class="schedule__year">⑤_plan</b>
+      </div>
+      <div class="col-xs-6">
+        <div class="schedule__year-form">
+          <%= f.text_area :plan, include_blank:"例：◯◯に到着",class:"schedule-form" %>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.submit "投稿する", class:"btn btn-primary preparation__btn",style:""%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

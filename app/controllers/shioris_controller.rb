@@ -12,6 +12,8 @@ class ShiorisController < ApplicationController
     @souvenirs = Souvenir.where(shiori_id: @shiori.id)
     @preparation = Preparation.new
     @preparations = Preparation.where(shiori_id: @shiori.id)
+    @schedule = Schedule.new
+    @schedules = Schedule.where(shiori_id: @shiori.id).order("year","month","day","time")
   end
 
   def new
