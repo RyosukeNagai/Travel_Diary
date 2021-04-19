@@ -52,7 +52,7 @@ $(function(){
 					var position = $(this).offset().top;
 					var scroll = $(window).scrollTop();
 					var windowHeight = $(window).height();
-					if (scroll > position - windowHeight + 2600){
+					if (scroll > position - windowHeight + 2300){
 						$(this).addClass('active');
 					}
 			});
