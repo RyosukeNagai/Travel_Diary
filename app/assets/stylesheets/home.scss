@@ -404,11 +404,13 @@ $cWite: White;
 .form-group{
   margin-bottom: 0px;
   padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: left;
-  border-bottom: 2px solid #F5F5F5;
-	width: 70%;
+  padding-bottom: 5px;
+  margin-left: 33%;
+  font-size: 16px;
   /* 必須 */ 
+  &__area {
+    width: 100%;
+  }
   &__require{
     background: #F0F8FF;
     margin: 0 0 0 8px;
@@ -431,6 +433,7 @@ $cWite: White;
     line-height: 1.5;
     font-size: 16px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 
 /* ハーフサイズ入力フォーム */
     &--half {

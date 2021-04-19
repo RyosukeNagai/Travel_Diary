@@ -5,16 +5,28 @@
   </div>
   <div class="login__main">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="col-xs-12">
       <div class="form-group">
-        <%= f.label :email %>　　　　<i class="fas fa-paper-plane"></i>
+        <%= f.label :email %> <i class="fas fa-paper-plane"></i>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-group__area">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@stores.jp",class: 'form-group__input' %>
       </div>
+    </div>
+    <div class="col-xs-12">
       <div class="form-group">
-        <%= f.label :password %>　　<i class="fas fa-key"></i>
+        <%= f.label :password %> <i class="fas fa-key"></i>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-group__area">
         <%= f.password_field :password,autocomplete: "new-password",placeholder: "6文字以上の半角英数字",class:'form-group__input',id:"password" %>
       </div>
-      <div class="action">
-        <%= f.submit "ログイン", class: "btn btn-primary souvenir__btn" %>
+    </div>
+      <div class="col-xs-12">
+        <%= f.submit "ログイン", class: "btn btn-primary login__btn" %>
       </div>
     <% end %>
     <div class="action__link">
