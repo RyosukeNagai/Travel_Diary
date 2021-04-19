@@ -12,4 +12,6 @@ class User < ApplicationRecord
   attachment :user_image,destroy: false
 
   validates :name, length: {minimum: 2, maximum: 20}
+  validates :introduce,length: { maximum: 30}
+
 end

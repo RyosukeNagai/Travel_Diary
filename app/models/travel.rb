@@ -3,6 +3,8 @@ class Travel < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 	attachment :travel_image, destroy: false
+
+	validates :travel_image, presence: true
 	validates :title, presence: true
 	validates :body, presence: true
 

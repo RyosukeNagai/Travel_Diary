@@ -12,17 +12,20 @@ class TravelsController < ApplicationController
   end
 
   def new
-      @travel = Travel.new
+    @travel = Travel.new(flash[:travel])
   end
 
   def create
-      @travel = Travel.new(travel_params)
-      @travel.user_id = current_user.id
-    if
-      @travel.save
+    @travel = Travel.new(travel_params)
+    @travel.user_id = current_user.id
+    if @travel.save
+      flash[:notice] = "投稿に成功しました"
       redirect_to travels_path
     else
-      render "new"
+      render "new", flash: {
+        travel: @travel,
+        error_messages: @travel.errors.full_messages
+      }
     end
   end
 

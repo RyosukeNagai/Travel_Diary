@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12">
+		<% if @travel.errors.any? %>
+      <div class="error">
+        <div class="error__message">
+          <p><%= @travel.errors.count %>つのエラーメッセージ</p>
+        </div>
+        <ul>
+          <% @travel.errors.full_messages.each do |message| %>
+            <div class="error__text">
+              <li>・<%= message %></li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -655,87 +655,21 @@
 	font-family: 'Anton', sans-serif;
 }
 }
-	
-
-.head-title{
-	background: linear-gradient(transparent 50%, #a8eaff 50%);
-	padding: 5px 10px;
-	margin-left: 50px;
-	text-align: center;
-	font-family: "Nico Moji";
-}
-.head-title2{
-	background: linear-gradient(transparent 50%, #86F9C5 50%);
-	padding: 5px 10px;
-	margin-left: 50px;
-	text-align: center;
-	font-family: "Nico Moji";
-}
-.head-text{
-	text-align: center;
-	font-size:15px;
-	margin-left:100px;
-	margin:18px 0;
-}
-.message{
-	margin-left:30%;
-	margin-bottom:50px;
-	color:red;
-}
 .error{
 	background-color:#FFBEDA;
 	padding:20px 20px;
 	opacity: 0.7;
-	margin-bottom:50px;
-}
-.actions{
-	margin-left:46%;
-}
-.head-text2{
-	background-color: #FFFF88;
-	font-size:20px;
-}
-.head-text3{
-	background-color: #FFBEDA;
-	font-size:20px;
-}
-
-// ヘッダー・フッダー
-.title{
-	font-family: 'Teko', sans-serif;
-	color:#EC8B5E;
-	font-size:60px;
-	margin-left:15%;
-	margin-top:15px;
-	border-bottom: solid 3px;
-}
-.nam-ti{
-	font-size:100px;
-	color:navy;
-}
-.nam-ti2{
-	font-size:80px;
-	color:navy;
-}
-
-.nav-item-name{
-	color:#696969;
-	padding-left:35%;
-	font-size:35px;
-	font-family: 'Teko', sans-serif;
-	padding:5px 0;
-}
-.nav-item{
-	color:white;
-	font-size:15px;
-	font-family: 'Permanent Marker', cursive;
-}
-.new-nav-item{
-	font-size:20px;
-	font-family: 'Permanent Marker', cursive;
-}
-.new-nav-item2{
-	font-size:20px;
-	font-family: 'Permanent Marker', cursive;
-	margin-left:15px;
+	margin-bottom:20px;
+	text-align: center;
+	&__message p{
+		color: #000033;
+		font-size: 20px;
+		margin-bottom: 10px;
+		font-weight: 600;
+	}
+	&__text {
+		margin-bottom:10px;
+		color:red;
+		font-weight: 600;	
+	}
 }
