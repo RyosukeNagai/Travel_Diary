@@ -78,4 +78,6 @@ group :production do
 end
 gem 'ransack'
 gem 'rails-i18n', '~> 5.1' 
+gem 'gretel'
+
 

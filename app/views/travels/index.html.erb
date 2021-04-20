@@ -1,6 +1,7 @@
 <%if flash[:notice] %>
 	<div class="alert alert-info"><%= flash[:notice] %></div>
 <% end %>
+<% breadcrumb :travel_index %>
 <div class="travel">
   <div class="search">
     <%= search_form_for @q do |f| %>

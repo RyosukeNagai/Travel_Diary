@@ -19,6 +19,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
         <% if user_signed_in? %>
+        <div class="breadcrumbss">
+          <%= breadcrumbs separator: " &rsaquo; " %>
+        </div> 
         <div class="header-hamburger">
           <div id="hm-icon">
             <a class="menu-trigger">
