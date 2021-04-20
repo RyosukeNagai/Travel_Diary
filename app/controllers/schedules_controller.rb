@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new(schedule_params)
     @schedule.shiori_id = @shiori.id
     @schedule.save
-    redirect_to shiori_schedules_path(@shiori)
+    redirect_to shiori_path(@shiori)
   end
 
   def edit
