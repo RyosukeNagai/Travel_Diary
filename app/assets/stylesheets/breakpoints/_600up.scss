@@ -26,10 +26,10 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 }
 
 .about {
-    &__inner {
+    &__inner1 {
     }
-    &__texts,
-    &__img {
+    &__texts1,&__texts2,&__texts3,
+    &__img1 {
         flex-basis: 50%;
     }
     // &__texts {
