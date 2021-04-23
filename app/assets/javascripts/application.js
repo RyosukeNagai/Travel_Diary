@@ -85,3 +85,28 @@ $(function(){
 		return false;
 	});
 });
+
+$(window).scroll(function(){
+		if ($(window).scrollTop() > 100) {
+			$('.service-left').addClass('startwd');
+		} else {
+			$('.service-left').removeClass('startwd');
+		}
+	});
+	
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 200) {
+			$('.service-right').addClass('startwd');
+		} else {
+			$('.service-right').removeClass('startwd');
+		}
+	});
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 500) {
+			$('.service-lefts').addClass('start');
+		} else {
+			$('.service-lefts').removeClass('start');
+		}
+	});
+

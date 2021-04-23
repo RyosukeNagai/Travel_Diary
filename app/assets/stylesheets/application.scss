@@ -38,7 +38,7 @@
 	}
 	//homeのページ
 	.main-visual {
-
+		background-attachment: none;
 	 &__content{
 		 padding-top: 30%;
 	 }
@@ -106,7 +106,45 @@
 	.anding-video {
 		height: 800px;
 	}
+	.img-zoom {
+		height: 410px;
+	}
+	.about-title {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 1;
+	}
+	.about-sub-title {
+		color: #EEEEEE;
+		font-size: 14px;
+	}
+	.about-texts {
+		color: #EEEEEE;
+		font-size: 13px;
+		line-height: 2;
+	}
 	.about {
+		&__inner {
+			flex-direction: column;
+		}
+		&__texts {
+			background-color: #0099ff;
+			height: 450px;
+		}
+		&__img {
+			height: 310px;
+		}
+		&__titles {
+			margin-left: 4%;
+			padding-top: 5%;
+		}
+		&__subs {
+			margin-left: 7%;
+		}
+		&__description {
+			margin-left: 5%;
+			margin-top: 10%;
+		}
 		&__logo {
 			width: 65px;
 			height: 30px;
@@ -114,8 +152,8 @@
 			margin-bottom:10px;
 		}
 		&__title {
-			font-size: 20px;
-			padding-bottom: 10px;
+			font-size: 25px;
+			padding-bottom: 0px;
 			padding-top: 10px;
 		}
 	}
@@ -709,5 +747,4 @@
 		color:red;
 		font-weight: 600;	
 	}
-	
 }
