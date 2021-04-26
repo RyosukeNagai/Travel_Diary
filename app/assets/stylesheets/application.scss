@@ -77,6 +77,73 @@
 			font-size: 10px;
 		}
 	 }
+	 //home slide 画像
+.slide__image1 {
+  &__text1 {
+    font-size: 25px;
+    margin-left: 10%;
+    margin-top: 15%;
+    &__sub {
+      font-size: 25px;
+      margin-left: 25%;
+      &__main {
+        font-size: 40px;
+        margin-left: 28%;
+        margin-top: 10%;
+        & > span {
+        }
+      }
+    }
+  }
+}
+.slide__image2 {
+  &__text2 {
+    font-size: 40px;
+    margin-top: 35vh;
+  }
+}
+.slide__image3 {
+  &__texts {
+    font-size: 45px;
+    text-align: center;
+    margin-top: 8%;
+  }
+  &__text3 {
+    font-size: 45px;
+    margin-top: 55%;
+    letter-spacing: 1px;
+    &__sub {
+      font-size: 32px;
+      margin-top: 5%;
+      margin-left: 5%;
+      & > span {
+        margin-left: 65%;
+      }
+    }
+  }
+}
+.slide__image4 {
+  &__text4 {
+    font-size: 20px;
+    margin-left: 5%;
+    margin-top: 100%;
+    transform: rotate( 10deg );
+    // -moz-transform: rotate(10deg);
+    // -webkit-transform: rotate(10deg);
+  }
+}
+.slide__image5 {
+  background-image: image-url("C.JPG");
+	background-size: cover;
+	background-position: center;
+  &__text5 {
+    font-size: 50px;
+    color: #EEEEEE;
+    font-family: 'Itim', cursive;
+    margin-top: 40%;
+    margin-left: 32%;
+  }
+}
 	 //footer
 	.logo {
 			margin-bottom: 10px;

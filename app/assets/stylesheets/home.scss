@@ -797,23 +797,101 @@ $cWite: White;
 	font-size: 16px;
 }
 
-//aboutページ
-
-.image1{
-background-image: image-url("holiday.jpg");
+//home slide 画像
+.slide__image1 {
+  background-image: image-url("I.JPG");
+	background-size: cover;
+	background-position: center;
+  &__text1 {
+    font-size: 40px;
+    font-family: 'Itim', cursive;
+    margin-left: 20%;
+    margin-top: 3%;
+    &__sub {
+      font-size: 40px;
+      font-family: 'Itim', cursive;
+      margin-left: 25%;
+      &__main {
+        font-size: 50px;
+        font-family: 'Itim', cursive;
+        margin-left: 30%;
+        margin-top: 3%;
+        & > span {
+          color: white;
+          font-size: 60px;
+        }
+      }
+    }
+  }
 }
-.image2{
-background-image: image-url("times.jpg");
+.slide__image2 {
+  background-image: image-url("U.JPG");
+	background-size: cover;
+	background-position: center;
+  &__text2 {
+    font-size: 50px;
+    color: #EEEEEE;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    margin-top: 35vh;
+  }
 }
-.image3{
-background-image: image-url("japan.jpg");
+.slide__image3 {
+  background-image: image-url("Y.JPG");
+	background-size: cover;
+	background-position: center;
+  &__texts {
+    font-size: 50px;
+    color: #EEEEEE;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    margin-top: 3%;
+  }
+  &__text3 {
+    font-size: 50px;
+    color: #EEEEEE;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    margin-top: 20%;
+    letter-spacing: 2px;
+    &__sub {
+      font-size: 32px;
+      color: #EEEEEE;
+      font-family: 'Itim', cursive;
+      font-weight: 600;
+      margin-top: 0%;
+      margin-left: 33.5%;
+      & > span {
+        margin-left: 37%;
+      }
+    }
+  }
 }
-.image4{
-background-image: image-url("pari.jpg");
+.slide__image4 {
+  background-image: image-url("B.JPG");
+	background-size: cover;
+	background-position: center;
+  &__text4 {
+    font-size: 30px;
+    color: black;
+    font-family: 'Itim', cursive;
+    margin-left: 15%;
+    margin-top: 26%;
+    transform: rotate( 15deg );
+    // -moz-transform: rotate(10deg);
+    // -webkit-transform: rotate(10deg);
+  }
 }
-.image5{
-background-image: image-url("travel.jpg");
+.slide__image5 {
+  background-image: image-url("C.JPG");
+	background-size: cover;
+	background-position: center;
+  &__text5 {
+    font-size: 50px;
+    color: #EEEEEE;
+    font-family: 'Itim', cursive;
+    margin-top: 40%;
+    margin-left: 32%;
+  }
 }
-
-
 
