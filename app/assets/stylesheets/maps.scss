@@ -8,12 +8,19 @@
   margin-top:30px;
 }
 .map-sarch{
-	margin-left:26%;
+	margin-left:15%;
 }
-.head-title12{
-	background: linear-gradient(transparent 60%, #99FF99 40%);
-	padding: 5px 10px;
-	margin-bottom:25px;
-	text-align: center;
+.map__title{
+	font-size: 20px;
+	margin-top: 50px;
+	margin-bottom:20px;
+	margin-left: 0%;
 	font-family: "Nico Moji";
+}
+#address {
+	padding: 5px;
+}
+.address__btns {
+	padding: 5px;
+	background-color: #00ccff;
 }
