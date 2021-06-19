@@ -44,7 +44,6 @@ class ShiorisController < ApplicationController
     end
     end
 
-
   def destroy
       @shiori = Shiori.find(params[:id])
       @shiori.destroy

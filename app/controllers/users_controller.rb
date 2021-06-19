@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :screen_user, only: [:edit, :update]
+  # before_action :screen_user, only: [:edit, :update]
 
   def show
    @user = User.find(params[:id])
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:notice] = "変更を保存しました"
       redirect_to user_path(@user)
     else
-      redirect_to edit_user_path(@user)
+      render "edit"
     end
   end
 
@@ -27,11 +27,11 @@ private
    params.require(:user).permit(:name, :introduce, :user_image)
   end
 
-  def screen_user
-      unless params[:id].to_i == current_user.id
-        redirect_to user_path(current_user)
-      end
-  end
+  # def screen_user
+  #     unless params[:id].to_i == current_user.id
+  #       redirect_to user_path(current_user)
+  #     end
+  # end
 
 end
 

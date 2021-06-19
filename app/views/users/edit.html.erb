@@ -1,7 +1,7 @@
 <% breadcrumb :user_edit %>
 <div class="post__edit">
 <div class="container">
-  <div class="post__edit__title">Profile編集</div>
+  <div class="post__edit__title">Shiori_Edit</div>
   <%= form_with(url: user_path, model: @user, method: :patch, local: true) do |f| %>
     <div class="row">
       <div class="col-lg-3">
@@ -12,7 +12,7 @@
       <div class="col-lg-7 offset-lg-1">
           <div class="row">
             <div class="col-lg-3">
-              <p>ニックネーム</p>
+              <p>Name</p>
             </div>
             <div class="col-lg-9">
               <%= f.text_field :name, autocomplete: "off", class: "product-form" %>
@@ -23,10 +23,11 @@
             <div class="col-lg-3">
               <p>自己紹介</p>
             </div>
-           <div class="col-lg-9" >
-             <%= f.text_area :introduce, autocomplete: "off",rows:"8",class: "product-introduction-form" %>
-           </div>
-          </div>
+            <div class="col-lg-9">
+              <%= f.text_field :introduce, autocomplete: "off", class: "product-form" %>
+            </div>
+          </div>          
+
         </div>
     </div>
     <div class="row">
