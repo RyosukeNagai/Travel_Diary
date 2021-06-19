@@ -16,11 +16,11 @@
 		<div class="col-lg-8 margin">
 			<b>自己紹介</b> <p><%= @user.introduce %></p>
 		</div>
-		<% if @user == current_user %> 
      	<div class="row">
-      	<%= link_to 'プロフィール編集', edit_user_path(@user), class: "col-xs-8 col-xs-offset-2 btn btn-default margin-btn" %>
+				<% if @user == current_user %> 
+      		<%= link_to 'プロフィール編集', edit_user_path(@user), class: "col-xs-8 col-xs-offset-2 btn btn-default margin-btn" %>
+				<% end %>
      	</div>
-    <% end %>
 	</div>
 </div>
 	<div class="mypage__profile__post">
